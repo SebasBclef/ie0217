@@ -18,3 +18,5 @@ int main(){
 
     return 0;
 }
+/*En este ejemplo, se puede ver como se utiliza el Define, y a partir de esto 
+solo utilizar la definicion como un valor 'global'*/
