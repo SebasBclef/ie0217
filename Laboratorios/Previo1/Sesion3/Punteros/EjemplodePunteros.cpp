@@ -13,6 +13,6 @@ int main(){
     cout<< "Direccion de var1: " << &var1 <<endl;
     cout<< "Direccion de var2: " << &var2 <<endl;
     cout<< "Direccion de var3: " << &var3 <<endl;
-    
+        
     return 0;
 }
