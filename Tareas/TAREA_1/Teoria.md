@@ -13,21 +13,16 @@
 ## 11. ¿Es permitido almacenar funciones en una estructura en C++? En el caso de los datos, ¿se pueden encapsular en miembros privados y públicos dentro de una estructura? Explique su respuesta.
 ## 12. Explique por qué es útil y común dividir el código en archivos .hpp, .cpp y main.cpp en C++. Describa el propósito específico de cada tipo de archivo.
 ## 13. Defina qué es el Type Casting en C++ y explique su utilidad. Proporcione ejemplos de situaciones en las que se emplea el Type Casting y cómo se realiza.
-## 14. ¿Por qu´e la sentencia goto no es recomendable en programaci´on moderna? Mencione
-ejemplos de c´omo se pueden lograr los mismos resultados sin el uso de goto.
-## 15. ¿D´onde y c´omo se guardan las variables que se crean en C++? Explique la diferencia
-entre el almacenamiento de variables locales y globales.
-## 16. ¿Cu´al es la diferencia entre pasar par´ametros por valor, por referencia y por puntero?
-## 17. Cuando se usa un puntero para apuntar a un arreglo en C++, ¿a qu´e valor o direcci´on
-apunta inicialmente? Describa c´omo ser´ıa la forma de acceder a todos los datos de ese
-arreglo mediante el puntero.
-## 18. Explique para qu´e son empleados los punteros dobles en C++. Proporcione ejemplos
-de situaciones en las que los punteros dobles son necesarios o beneficiosos.
-## 19. ¿Cu´al es la diferencia entre un break y un continue en los bucles de C++?
-## 20. ¿Para qu´e se utiliza la directiva #ifndef?
-## 21. ¿Qu´e es el puntero this en C++?
-## 22. ¿Qu´e es un puntero nullptr?
-## 23. ¿Cu´al es la diferencia entre un arreglo y una lista en C++?
-## 24. ¿Qu´e es una funci´on prototipo?
-## 25. ¿Investigue qu´e es un memory leak?
+## 14. ¿Por qué la sentencia goto no es recomendable en programación moderna? Mencione ejemplos de cómo se pueden lograr los mismos resultados sin el uso de goto.
+## 15. ¿Dónde y cómo se guardan las variables que se crean en C++? Explique la diferencia entre el almacenamiento de variables locales y globales.
+## 16. ¿Cuál es la diferencia entre pasar parámetros por valor, por referencia y por puntero?
+## 17. Cuando se usa un puntero para apuntar a un arreglo en C++, ¿a qué valor o dirección apunta inicialmente? Describa cómo sería la forma de acceder a todos los datos de ese arreglo mediante el puntero.
+## 18. Explique para qué son empleados los punteros dobles en C++. Proporcione ejemplos de situaciones en las que los punteros dobles son necesarios o beneficiosos.
+## 19. ¿Cuál es la diferencia entre un break y un continue en los bucles de C++?
+## 20. ¿Para qué se utiliza la directiva #ifndef?
+## 21. ¿Qué es el puntero this en C++?
+## 22. ¿Qué es un puntero nullptr?
+## 23. ¿Cuál es la diferencia entre un arreglo y una lista en C++?
+## 24. ¿Qué es una funcién prototipo?
+## 25. ¿Investigue qué es un memory leak?
 
