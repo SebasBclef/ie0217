@@ -1,10 +1,7 @@
 # Tarea 1,IE-0207,Sebastián Bonilla Vega, C01263.
 
-## 1. ¿Cu´al es la principal diferencia entre C y C++?
-## 2. ¿Cu´ales son las diferencias fundamentales entre un lenguaje de programaci´on compilado
-y uno interpretado?
-Proporcione ejemplos de situaciones en las que ser´ıa m´as ´optimo utilizar un lenguaje
-compilado y otras en las que ser´ıa m´as adecuado un lenguaje interpretado.
+## 1. ¿Cuál es la principal diferencia entre C y C++?
+## 2. ¿Cuáles son las diferencias fundamentales entre un lenguaje de programación compilado y uno interpretado? Proporcione ejemplos de situaciones en las que sería más óptimo utilizar un lenguaje compilado y otras en las que sería más adecuado un lenguaje interpretado.
 ## 3. Explique qu´e es un linker en el contexto de un lenguaje de programaci´on compilado.
 ¿Cu´al es su funci´on principal y por qu´e es esencial en el proceso de compilaci´on?
 ## 4. Describa las diferencias clave entre los tipos de datos derivados y primarios en C++.
