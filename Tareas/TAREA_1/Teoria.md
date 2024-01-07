@@ -21,13 +21,27 @@ Los **datos derivados** incluyen las funciones, arrays, punteros y referencias. 
 Cuando **se inicializa** una variable, se le está pidiendo a la computadora que le asigne un espacio de memoria solo para ella, a pesar de que **aún no haya nada declarado en esta variable.** Cuando **declaro** una variable, se le asigna un valor específico a guardar para utilizar posteriormente en el código fuente.
 
 ## 6. ¿Qué es la sobrecarga de funciones en C++ y cuáles son sus beneficios?
-La sorbecarga de funciones se refiere a que se pueden definir varias funciones con el mismo nombre en el mismo archivo, pero se definen con distintos conjuntos de parámetros. Esto significa que se pueden tener múltiples funciones con el mismo nombre y cada una realiza una tarea diferente basado en la cantidad de parámetros que reciben. Entonces, si defino una función llamada: 
+La sorbecarga de funciones se refiere a que se pueden definir varias funciones con el mismo nombre en el mismo archivo, pero se definen con distintos conjuntos de parámetros. Esto significa que se pueden tener múltiples funciones con el mismo nombre y cada una realiza una tarea diferente basado en la cantidad de parámetros que reciben. Entonces, usando este ejemplo que hizo ChatGPT:
 ```
-git status
-git add
-git commit
+void MostrarMensaje(int numero) {
+std::cout << "El número es: " << numero << std::endl;
+}
+void MostrarMensaje(double numero) {
+std::cout << "El número es: " << numero << std::endl;
+}
+void MostrarMensaje(conts char*mensaje) {
+std::cout << mensaje << std::endl;
+}
 ```
-ImprimirMensaje
+Y le pido que se ejecute así, por ejemplo:
+```
+int main() {
+MostrarMensaje(42);
+MostrarMensaje (3.14);
+MostrarMensaje ("Hola Mundo.)
+}
+```
+Entonces, el compilador va a seleccionar la función ¨MostrarMensaje¨ adecuada para cada uno de los datos pedidos. Si le meto un float, va a escoger el ¨Mostrar Mensaje¨ que tenga un float, si le meto un int, va a escoger el ¨MostrarMensaje¨ que tenga un int, y así sucesivamente. 
 ## 7. ¿Qué es un puntero y cómo se utiliza? Explique con un ejemplo de la vida real.
 ## 8. ¿Una variable global almacena el valor original de una operación en una función o una copia? Explique su respuesta. Explique por qué se elige usar variables globales en lugar de locales en ciertos contextos.
 ## 9. Investigue y explique tres métodos comunes de la biblioteca string en C++.
