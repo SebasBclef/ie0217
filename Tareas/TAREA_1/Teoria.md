@@ -107,9 +107,31 @@ int main() {
     return 0;
 }
 ```
-
-
 ## 14. ¿Por qué la sentencia goto no es recomendable en programación moderna? Mencione ejemplos de cómo se pueden lograr los mismos resultados sin el uso de goto.
+No es recomendable, ya que esta es una instrucción que permite realizar saltos no estructurados dentro de un programa. Su uso no es recomendado, ya que su uso dificulta la lectura, mantenimiento y entendimiento del mismo; rompen el flujo del programa. Además, esta sentencia aumenta la complejidad ya que no sigue una estructura clara proporcionada por otras sentencias, como los **if, while y for**. Todo esto, sin considerar que hay alternativas estructuradas sin causar tanta complejidad. 
+
+Para no usar un goto, se pueden iniciar mediante variables de control, las cuáles son más estructuradas y controladas. Analizando el siguiente código:
+```
+// Loop for Con go to
+for (int i = 0; i < 10; ++i) {
+    for (int j = 0; j < 10; ++j) {
+        if (condicion) {
+            goto salida;
+        }
+    }
+}
+
+// Loop for Sin go to
+bool salir = false;
+for (int i = 0; i < 10 && !salir; ++i) {
+    for (int j = 0; j < 10 && !salir; ++j) {
+        if (condicion) {
+            salir = true; //variable de control
+        }
+    }
+}
+```
+
 ## 15. ¿Dónde y cómo se guardan las variables que se crean en C++? Explique la diferencia entre el almacenamiento de variables locales y globales.
 ## 16. ¿Cuál es la diferencia entre pasar parámetros por valor, por referencia y por puntero?
 ## 17. Cuando se usa un puntero para apuntar a un arreglo en C++, ¿a qué valor o dirección apunta inicialmente? Describa cómo sería la forma de acceder a todos los datos de ese arreglo mediante el puntero.
