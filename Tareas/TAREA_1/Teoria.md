@@ -50,7 +50,13 @@ Un puntero es una variable que almacena la **dirección de memoria** de otra var
 Al usar una variable global en una función, esta función puede acceder y modificar el valor almacenado en la variable, no se crea una copia de la variable, ya que la función trabaja directamente con la ubicación de la memoria. Se puede escoger utilizar variables globales ya que estos se vuelven accesibles desde cualquier parte del programa. Por otro lado el valor persiste y retiene su valor a pesar de que la función termine su trabajo. También, es importante cuando se busca ayudar evitar pasar un gran número de parámetros entre funciones, mejorando la legibilidad del código.
 
 ## 9. Investigue y explique tres métodos comunes de la biblioteca string en C++.
-La biblioteca string proporciona una gama de funciones para manipular cadenas de carácteres de manera eficiente.
+La biblioteca string proporciona una gama de funciones para manipular cadenas de carácteres de manera eficiente. 3 de estos son:
+
+- George Washington
+* John Adams
++ Thomas Jefferson
+
+
 
 ## 10. ¿Cuál es la principal diferencia entre un bucle do-while y un bucle while?
 ## 11. ¿Es permitido almacenar funciones en una estructura en C++? En el caso de los datos, ¿se pueden encapsular en miembros privados y públicos dentro de una estructura? Explique su respuesta.
