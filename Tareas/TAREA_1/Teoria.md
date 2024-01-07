@@ -4,21 +4,15 @@
 ## 2. ¿Cuáles son las diferencias fundamentales entre un lenguaje de programación compilado y uno interpretado? Proporcione ejemplos de situaciones en las que sería más óptimo utilizar un lenguaje compilado y otras en las que sería más adecuado un lenguaje interpretado.
 ## 3. Explique qué es un linker en el contexto de un lenguaje de programación compilado. ¿Cuál es su función principal y por qué es esencial en el proceso de compilación?
 ## 4. Describa las diferencias clave entre los tipos de datos derivados y primarios en C++.
-## 5. Defina qu´e significa inicializar y declarar una variable.
-## 6. ¿Qu´e es la sobrecarga de funciones en C++ y cu´ales son sus beneficios?
-## 7. ¿Qu´e es un puntero y c´omo se utiliza? Explique con un ejemplo de la vida real.
-## 8. ¿Una variable global almacena el valor original de una operaci´on en una funci´on o una
-copia? Explique su respuesta. Explique por qu´e se elige usar variables globales en lugar
-de locales en ciertos contextos.
-## 9. Investigue y explique tres m´etodos comunes de la biblioteca string en C++.
-## 10. ¿Cu´al es la principal diferencia entre un bucle do-while y un bucle while?
-## 11. ¿Es permitido almacenar funciones en una estructura en C++? En el caso de los datos,
-¿se pueden encapsular en miembros privados y p´ublicos dentro de una estructura?
-Explique su respuesta.
-## 12. Explique por qu´e es ´util y com´un dividir el c´odigo en archivos .hpp, .cpp y main.cpp
-en C++. Describa el prop´osito espec´ıfico de cada tipo de archivo.
-## 13. Defina qu´e es el Type Casting en C++ y explique su utilidad. Proporcione ejemplos
-de situaciones en las que se emplea el Type Casting y c´omo se realiza.
+## 5. Defina qué significa inicializar y declarar una variable.
+## 6. ¿Qué es la sobrecarga de funciones en C++ y cuáles son sus beneficios?
+## 7. ¿Qué es un puntero y cómo se utiliza? Explique con un ejemplo de la vida real.
+## 8. ¿Una variable global almacena el valor original de una operación en una función o una copia? Explique su respuesta. Explique por qué se elige usar variables globales en lugar de locales en ciertos contextos.
+## 9. Investigue y explique tres métodos comunes de la biblioteca string en C++.
+## 10. ¿Cuál es la principal diferencia entre un bucle do-while y un bucle while?
+## 11. ¿Es permitido almacenar funciones en una estructura en C++? En el caso de los datos, ¿se pueden encapsular en miembros privados y públicos dentro de una estructura? Explique su respuesta.
+## 12. Explique por qué es útil y común dividir el código en archivos .hpp, .cpp y main.cpp en C++. Describa el propósito específico de cada tipo de archivo.
+## 13. Defina qué es el Type Casting en C++ y explique su utilidad. Proporcione ejemplos de situaciones en las que se emplea el Type Casting y cómo se realiza.
 ## 14. ¿Por qu´e la sentencia goto no es recomendable en programaci´on moderna? Mencione
 ejemplos de c´omo se pueden lograr los mismos resultados sin el uso de goto.
 ## 15. ¿D´onde y c´omo se guardan las variables que se crean en C++? Explique la diferencia
