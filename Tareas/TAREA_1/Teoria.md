@@ -108,7 +108,7 @@ int main() {
 }
 ```
 ## 14. ¿Por qué la sentencia goto no es recomendable en programación moderna? Mencione ejemplos de cómo se pueden lograr los mismos resultados sin el uso de goto.
-No es recomendable, ya que esta es una instrucción que permite realizar saltos no estructurados dentro de un programa. Su uso no es recomendado, ya que su uso dificulta la lectura, mantenimiento y entendimiento del mismo; rompen el flujo del programa. Además, esta sentencia aumenta la complejidad ya que no sigue una estructura clara proporcionada por otras sentencias, como los **if, while y for**. Todo esto, sin considerar que hay alternativas estructuradas sin causar tanta complejidad. 
+No es recomendable, ya que esta es una instrucción que permite realizar saltos no estructurados dentro de un programa. Su uso dificulta la lectura, mantenimiento y entendimiento del mismo; rompe el flujo del programa haciéndo saltos no controlados. Además, esta sentencia aumenta la complejidad ya que no sigue una estructura clara proporcionada por otras sentencias, como los **if, while y for**. Todo esto, sin considerar que hay alternativas estructuradas sin causar tanta complejidad. 
 
 Para no usar un goto, se pueden iniciar mediante variables de control, las cuáles son más estructuradas y controladas. Analizando el siguiente código:
 ```
