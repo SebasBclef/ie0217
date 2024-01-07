@@ -61,7 +61,12 @@ La diferencia principal es que el bucle "do-while" garantiza que el código se e
 Las estructuras solo permiten que se almacenen datos, de distintos tipos. Sin embargo, al usar punteros, se puede lograr algo parecido. Se pueden referenciar partes de la memoria donde estén guardadas las funciones, y estos punteros se pueden meter en una estructura, para decir que las funciones están "guardadas" en una estructura. Entonces, en términos estrictos no se pueden guardar funciones en estructuras de manera directa, pero se puede lograr ¨brincar¨ esa restricción. 
 
 Cuando se habla de miembros privados y públicos en una estructura, no se pueden hacer especificaciones de ese tipo. Para realizar eso, es mejor utilizar una **clase.** En las clases, es más directo realizar divisiones de acceso así en comparación con las estructuras.
+
 ## 12. Explique por qué es útil y común dividir el código en archivos .hpp, .cpp y main.cpp en C++. Describa el propósito específico de cada tipo de archivo.
+Es útil, ya que permite mayor organización y estructuración de código. Por otro lado, al mejorar el orden del código, se hace más fácil escalar y mantener el código. Los archivos son los siguientes:
+- **.hpp**: Se utiliza para obtener la longitud, o número de carácteres que hay en un solo string, no modifica la cadena y devuelve un valor entero.
+* **.cpp**: Se utiliza para sacar una subcadena de una cadena más grande, y toma dos argumentos, siendo estos la posición inicial y la longitud de la subcadena que se desea extraer.
++ ** main.cpp**: Se utiliza para buscar cuando ocurre una subcadena, por primera vez, dentro de otra cadena. Este devuelve la posición de ésta primera posición de la subcadena.
 ## 13. Defina qué es el Type Casting en C++ y explique su utilidad. Proporcione ejemplos de situaciones en las que se emplea el Type Casting y cómo se realiza.
 ## 14. ¿Por qué la sentencia goto no es recomendable en programación moderna? Mencione ejemplos de cómo se pueden lograr los mismos resultados sin el uso de goto.
 ## 15. ¿Dónde y cómo se guardan las variables que se crean en C++? Explique la diferencia entre el almacenamiento de variables locales y globales.
