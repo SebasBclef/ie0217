@@ -18,7 +18,8 @@ Un linker permite enlazar varios archivos en el proceso de compilación, y lo ha
 Los **datos derivados** incluyen las funciones, arrays, punteros y referencias. Mientras que los **datos primarios** son los integers, characters, booleanos, puntos flotantes, puntos flotantes dobles, voids y wide characters. La diferencia clave es que unos se meten en otros, como juguetes en una caja. Los datos primeros serían los juguetes que van dentro los datos derivados, que propiamente son la caja. Dejando la analogía de la caja, también se puede ver que los datos derivados nacen derivando o combinando los datos primarios o básicos.
 
 ## 5. Defina qué significa inicializar y declarar una variable.
-Cuando **se inicializa**
+Cuando **se inicializa** una variable, se le está pidiendo a la computadora que le asigne un espacio de memoria solo para ella, a pesar de que **aún no haya nada declarado en esta variable.** Cuando **declaro** una variable, se le asigna un valor específico a guardar para utilizar posteriormente en el código fuente.
+
 ## 6. ¿Qué es la sobrecarga de funciones en C++ y cuáles son sus beneficios?
 ## 7. ¿Qué es un puntero y cómo se utiliza? Explique con un ejemplo de la vida real.
 ## 8. ¿Una variable global almacena el valor original de una operación en una función o una copia? Explique su respuesta. Explique por qué se elige usar variables globales en lugar de locales en ciertos contextos.
