@@ -52,12 +52,9 @@ Al usar una variable global en una función, esta función puede acceder y modif
 ## 9. Investigue y explique tres métodos comunes de la biblioteca string en C++.
 La biblioteca string proporciona una gama de funciones para manipular cadenas de carácteres de manera eficiente. 3 de estos son:
 
-- size()
-* substr()
-+ find()
-
-
-
+- size(): Se utiliza para obtener la longitud, o número de carácteres que hay en un solo string, no modifica la cadena y devuelve un valor entero.
+* substr(): Se utiliza para sacar una subcadena de una cadena más grande, y toma dos argumentos, siendo estos la posición inicial y la longitud de la subcadena que se desea extraer.
++ find(): Se utiliza para buscar cuando ocurre una subcadena, por primera vez, dentro de otra cadena. Este devuelve la posición de ésta primera posición de la subcadena.
 ## 10. ¿Cuál es la principal diferencia entre un bucle do-while y un bucle while?
 ## 11. ¿Es permitido almacenar funciones en una estructura en C++? En el caso de los datos, ¿se pueden encapsular en miembros privados y públicos dentro de una estructura? Explique su respuesta.
 ## 12. Explique por qué es útil y común dividir el código en archivos .hpp, .cpp y main.cpp en C++. Describa el propósito específico de cada tipo de archivo.
