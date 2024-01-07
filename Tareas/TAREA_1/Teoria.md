@@ -73,6 +73,42 @@ El Type Casting se refiere a la conversión explícita de un tipo de dato a otro
 static_cast<float>(entero)
 ```
 La cuál realiza la conversión explícita de un entero a un punto flotante. Para el casting **implícito**, se tiene que éste se realiza de manera automática por el compilador cuando éste no necesita una conversión explícita del programador. Es útil para evitar pérdidas de precisión, como por ejemplo cuando se pasa de un **double a un float**, haciéndolo a través de casting garantiza que no se pierda información. Además, el casting permite el manejo preciso de punteros, como cuando se deba pasar un puntero de un tipo a otro. Un ejemplo de typecasting se puede ver en este código:
+```
+//Conversión de entero a float
+#include <iostream>
+
+int main() {
+    int entero = 42;
+
+    // Casting explícito de int a float
+    float flotante = static_cast<float>(entero);
+
+    std::cout << "Entero: " << entero << std::endl;
+    std::cout << "Flotante: " << flotante << std::endl;
+
+    return 0;
+}
+```
+Y, viéndo una conversión implícita:
+
+```
+//Conversión implícita con un typecasting.
+#include <iostream>
+
+int main() {
+    int entero = 42;
+
+    // Casting implícito de int a float
+    float flotante = entero;
+
+    std::cout << "Entero: " << entero << std::endl;
+    std::cout << "Flotante (implícito): " << flotante << std::endl;
+
+    return 0;
+}
+```
+
+
 ## 14. ¿Por qué la sentencia goto no es recomendable en programación moderna? Mencione ejemplos de cómo se pueden lograr los mismos resultados sin el uso de goto.
 ## 15. ¿Dónde y cómo se guardan las variables que se crean en C++? Explique la diferencia entre el almacenamiento de variables locales y globales.
 ## 16. ¿Cuál es la diferencia entre pasar parámetros por valor, por referencia y por puntero?
