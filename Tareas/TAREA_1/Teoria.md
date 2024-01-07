@@ -145,6 +145,19 @@ Las diferencias principales son:
 + Parámetros por Puntero : Es bastante similar a pasar por referencia, pero se utiliza un puntero. Permite la manipulación directa del valor original, con el cuidado que se debe tener cuando se trabaja con punteros. Sun sintáxis es **void function(int * puntero )**
 
 ## 17. Cuando se usa un puntero para apuntar a un arreglo en C++, ¿a qué valor o dirección apunta inicialmente? Describa cómo sería la forma de acceder a todos los datos de ese arreglo mediante el puntero.
+Cuando seaq crea un puntero para que apunte a un array, este inicalmente apunta a la primera posición de memoria del arreglo, lo que significa que apunta al primer elemento del arreglo. La forma para acceder a todos los datos del arreglo mediante el puntero, sería mediante el uso de un bucle for, el cual tiene como parámetros recorrer desde 0 al tamaño del arrreglo. Visto en forma de código, se vería así:
+```
+#include <iostream>
+int main() {
+    int arreglo[] = {1, 2, 3, 4, 5};
+    int *puntero = arreglo; //Al inicializar el puntero, este de manera automática apunta al primer elemento del array
+    for (int i = 0; i < 5; ++i) {// este for es el que permite accesar los elementos del array con el puntero
+        std::cout << "Elemento " << i << ": " << *puntero << std::endl;
+        puntero++;// esta parte avanza al siguiente elemento del array
+    }
+    return 0;
+}
+```
 
 
 ## 18. Explique para qué son empleados los punteros dobles en C++. Proporcione ejemplos de situaciones en las que los punteros dobles son necesarios o beneficiosos.
