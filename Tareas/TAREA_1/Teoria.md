@@ -136,7 +136,15 @@ for (int i = 0; i < 10 && !salir; ++i) {
 Las **variables locales** son creadas cuando la función en el que están declaradas es ejecutado, y se eliminan una vez que se termina la ejecución del mismo. Estas variables se almacenan en el **stack** de la memoria, cuando estas variables son automáticas. Caso contrario, son variables con duración dinámica se crean y se destruyen explícitamente por la persona que esté desarrollando el código, a través de funciones como **new y delete**. Estas variables locales se almacenan en el heap.
 
 Por otro lado, las **variables globales** tienen una duración estática, lo que significa que **existen durante toda la ejecución del programa**, lo que significa que se deben almacenar en una región de la memoria llamada **segmento de datos.**
+
 ## 16. ¿Cuál es la diferencia entre pasar parámetros por valor, por referencia y por puntero?
+Las diferencias principales son:
+
+- Parámetros por Valor: Se copia el valor del argumento del parámetro cuando se inicia la función.Tiene sintáxis **void function (int parametro);**. Lo más notable. es que los cambios realizados dentro de la función no afectan el argumento original y es útil cuando no se quiere que la función modifique el valor original del argumento.
+* Parámetros por Referencia: Se utiliza para sacar una subcadena de una cadena más grande, y toma dos argumentos, siendo estos la posición inicial y la longitud de la subcadena que se desea extraer.
++ Parámetros por Puntero : Se utiliza para buscar cuando ocurre una subcadena, por primera vez, dentro de otra cadena. Este devuelve la posición de ésta primera posición de la subcadena.
+
+
 ## 17. Cuando se usa un puntero para apuntar a un arreglo en C++, ¿a qué valor o dirección apunta inicialmente? Describa cómo sería la forma de acceder a todos los datos de ese arreglo mediante el puntero.
 ## 18. Explique para qué son empleados los punteros dobles en C++. Proporcione ejemplos de situaciones en las que los punteros dobles son necesarios o beneficiosos.
 ## 19. ¿Cuál es la diferencia entre un break y un continue en los bucles de C++?
