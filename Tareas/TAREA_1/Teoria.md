@@ -14,6 +14,7 @@ Entonces, los lenguajes compilados permiten mayor control sobre los recursos dis
 ## 3. Explique qué es un linker en el contexto de un lenguaje de programación compilado. ¿Cuál es su función principal y por qué es esencial en el proceso de compilación?
 Un linker permite enlazar varios archivos en el proceso de compilación, y lo hace a través de un ejecutable (.exe). Algunas de sus funciones principales incluyen:
 
+
 ## 4. Describa las diferencias clave entre los tipos de datos derivados y primarios en C++.
 ## 5. Defina qué significa inicializar y declarar una variable.
 ## 6. ¿Qué es la sobrecarga de funciones en C++ y cuáles son sus beneficios?
