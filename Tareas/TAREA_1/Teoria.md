@@ -66,7 +66,7 @@ Cuando se habla de miembros privados y públicos en una estructura, no se pueden
 Es útil, ya que permite mayor organización y estructuración de código. Por otro lado, al mejorar el orden del código, se hace más fácil escalar y mantener el código. Los archivos son los siguientes:
 - **.hpp**: También llamado "header", es usual declarar dentro de éste clases, funciones, variables o estructuras, todo lo que sea utilizable varias veces en un mismo proyecto. Proporcionan una interfaz externa a las implementaciones.
 * **.cpp**: Estos son archivos de código fuente que contienen las implementaciones de las funciones declaradas en los archivos del header. Se escribe la mayoría del código que realiza la lógica en las declaraciones.
-+ **main.cpp**: 
++ **main.cpp**: En este archivo, se incluye función **main()**, que es la encargada de ejecutar todo el programa. Este archivo puede incluir todos los encabezados, y es capaz de llamar las funciones de otros archivos para organizar el flujo del programa.
 ## 13. Defina qué es el Type Casting en C++ y explique su utilidad. Proporcione ejemplos de situaciones en las que se emplea el Type Casting y cómo se realiza.
 ## 14. ¿Por qué la sentencia goto no es recomendable en programación moderna? Mencione ejemplos de cómo se pueden lograr los mismos resultados sin el uso de goto.
 ## 15. ¿Dónde y cómo se guardan las variables que se crean en C++? Explique la diferencia entre el almacenamiento de variables locales y globales.
