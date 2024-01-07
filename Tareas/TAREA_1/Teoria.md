@@ -42,7 +42,9 @@ MostrarMensaje ("Hola Mundo.)
 }
 ```
 Entonces, el compilador va a seleccionar la función ¨MostrarMensaje¨ adecuada para cada uno de los datos pedidos. Si le meto un float, va a escoger el ¨Mostrar Mensaje¨ que tenga un float, si le meto un int, va a escoger el ¨MostrarMensaje¨ que tenga un int, y así sucesivamente. 
+
 ## 7. ¿Qué es un puntero y cómo se utiliza? Explique con un ejemplo de la vida real.
+Un puntero es una variable que almacena la **dirección de memoria** de otra variable. No contiene un valor directamente, contiene la dirección donde se encuentra el valor específico. Usando una casa de analogía, las casas tienen direcciones específicas. Los punteros son lo que me apuntan hacia la dirección de esa casa. Puedo pedirle al puntero que me muestre la dirección de la casa, y que me muestre lo que tiene dentro de ella.
 ## 8. ¿Una variable global almacena el valor original de una operación en una función o una copia? Explique su respuesta. Explique por qué se elige usar variables globales en lugar de locales en ciertos contextos.
 ## 9. Investigue y explique tres métodos comunes de la biblioteca string en C++.
 ## 10. ¿Cuál es la principal diferencia entre un bucle do-while y un bucle while?
