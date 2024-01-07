@@ -12,8 +12,7 @@ Cuando se habla de un **lenguaje interpretado**, se tiene que este es un lenguaj
 Entonces, los lenguajes compilados permiten mayor control sobre los recursos disponibles, y al compilarlo manualmente, disminuye la **velocidad de ejecución** del código, a cambio de que se ocupa más tiempo para trabajarlo ya que hay que compilar y ejecutar por aparte. En un lenguaje interpretado, la compilación y la ejecución suceden al mismo tiempo; por lo que es menos eficiente y se consumen más recursos, pero se ocupa menos tiempo para trabajarlo.
 
 ## 3. Explique qué es un linker en el contexto de un lenguaje de programación compilado. ¿Cuál es su función principal y por qué es esencial en el proceso de compilación?
-Un linker permite enlazar varios archivos en el proceso de compilación, y lo hace a través de un ejecutable (.exe). Algunas de sus funciones principales incluyen:
-
+Un linker permite enlazar varios archivos en el proceso de compilación, y lo hace a través de un ejecutable (.exe). Algunas de sus funciones principales incluyen asociar símbolos (variables, nombres de funciones), a un espacio en de memoria real; también es capaz de enlazar bibliotecas con el código fuente, para que éste  se pueda ejecutar de manera coherente y se encarga de conectar las llamadas de funciones que hace el código fuente con los archivos en los que estén dichas funciones. Por otro lado, el linker convierte las direcciones de memoria utilizadas por los archivos objeto en direcciones de memoria absoluta. La inclusión de un linker es crucial, ya que sin este, no se puede juntar todo en un solo ejecutable (.exe).
 
 ## 4. Describa las diferencias clave entre los tipos de datos derivados y primarios en C++.
 ## 5. Defina qué significa inicializar y declarar una variable.
