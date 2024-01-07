@@ -2,8 +2,7 @@
 
 ## 1. ¿Cuál es la principal diferencia entre C y C++?
 ## 2. ¿Cuáles son las diferencias fundamentales entre un lenguaje de programación compilado y uno interpretado? Proporcione ejemplos de situaciones en las que sería más óptimo utilizar un lenguaje compilado y otras en las que sería más adecuado un lenguaje interpretado.
-## 3. Explique qu´e es un linker en el contexto de un lenguaje de programaci´on compilado.
-¿Cu´al es su funci´on principal y por qu´e es esencial en el proceso de compilaci´on?
+## 3. Explique qué es un linker en el contexto de un lenguaje de programación compilado. ¿Cuál es su función principal y por qué es esencial en el proceso de compilación?
 ## 4. Describa las diferencias clave entre los tipos de datos derivados y primarios en C++.
 ## 5. Defina qu´e significa inicializar y declarar una variable.
 ## 6. ¿Qu´e es la sobrecarga de funciones en C++ y cu´ales son sus beneficios?
