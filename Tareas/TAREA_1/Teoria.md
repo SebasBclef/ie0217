@@ -140,9 +140,9 @@ Por otro lado, las **variables globales** tienen una duración estática, lo que
 ## 16. ¿Cuál es la diferencia entre pasar parámetros por valor, por referencia y por puntero?
 Las diferencias principales son:
 
-- Parámetros por Valor: Se copia el valor del argumento del parámetro cuando se inicia la función.Tiene sintáxis **void function (int parametro);**. Lo más notable. es que los cambios realizados dentro de la función no afectan el argumento original y es útil cuando no se quiere que la función modifique el valor original del argumento.
-* Parámetros por Referencia: Se utiliza para sacar una subcadena de una cadena más grande, y toma dos argumentos, siendo estos la posición inicial y la longitud de la subcadena que se desea extraer.
-+ Parámetros por Puntero : Se utiliza para buscar cuando ocurre una subcadena, por primera vez, dentro de otra cadena. Este devuelve la posición de ésta primera posición de la subcadena.
+- Parámetros por Valor: Se copia el valor del argumento del parámetro cuando se inicia la función.Tiene sintáxis **void function (int parametro);**. Lo más notable es que los cambios realizados dentro de la función no afectan el argumento original y es útil cuando no se quiere que la función modifique el valor original del argumento.
+* Parámetros por Referencia: En este caso, se pasa la referencia al argumento original, permitiendo modificar el valor directamente. Su sintáxis es ** void function (int &referencia)**. En este caso, los cambos dentro de la función afectan el argumento original, y es útil cuando el interés es modificar el valor original del argumento.
++ Parámetros por Puntero : Es bastante similar a pasar por referencia, pero se utiliza un puntero. Permite la manipulación directa del valor original, con el cuidado que se debe tener cuando se trabaja con punteros. Sun sintáxis es **void function(int * puntero )**
 
 
 ## 17. Cuando se usa un puntero para apuntar a un arreglo en C++, ¿a qué valor o dirección apunta inicialmente? Describa cómo sería la forma de acceder a todos los datos de ese arreglo mediante el puntero.
