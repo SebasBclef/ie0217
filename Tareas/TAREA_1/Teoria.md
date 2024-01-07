@@ -68,6 +68,11 @@ Es útil, ya que permite mayor organización y estructuración de código. Por o
 * **.cpp**: Estos son archivos de código fuente que contienen las implementaciones de las funciones declaradas en los archivos del header. Se escribe la mayoría del código que realiza la lógica en las declaraciones.
 + **main.cpp**: En este archivo, se incluye función **main()**, que es la encargada de ejecutar todo el programa. Este archivo puede incluir todos los encabezados, y es capaz de llamar las funciones de otros archivos para organizar el flujo del programa.
 ## 13. Defina qué es el Type Casting en C++ y explique su utilidad. Proporcione ejemplos de situaciones en las que se emplea el Type Casting y cómo se realiza.
+El Type Casting se refiere a la conversión explícita de un tipo de dato a otro. Es necesario cuando se necesita utilizar un tipo diferente de expresión.Existen el casting implícito y el casting explícito. En el **explícito**, se habla de la conversión manual de un tipo de dato a otro, realizado mediante el uso de operadores o funciones. Como por ejemplo, convirtiendo un entero a un punto flotante a través de la función:
+```
+static_cast<float>(entero)
+```
+La cuál realiza la conversión explícita de un entero a un punto flotante. Para el casting **implícito**, se tiene que éste se realiza de manera automática por el compilador cuando éste no necesita una conversión explícita del programador. Es útil para evitar pérdidas de precisión, como por ejemplo cuando se pasa de un **double a un float**, haciéndolo a través de casting garantiza que no se pierda información. Además, el casting permite el manejo preciso de punteros, como cuando se deba pasar un puntero de un tipo a otro. Un ejemplo de typecasting se puede ver en este código:
 ## 14. ¿Por qué la sentencia goto no es recomendable en programación moderna? Mencione ejemplos de cómo se pueden lograr los mismos resultados sin el uso de goto.
 ## 15. ¿Dónde y cómo se guardan las variables que se crean en C++? Explique la diferencia entre el almacenamiento de variables locales y globales.
 ## 16. ¿Cuál es la diferencia entre pasar parámetros por valor, por referencia y por puntero?
