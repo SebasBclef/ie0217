@@ -158,9 +158,9 @@ int main() {
     return 0;
 }
 ```
-
-
 ## 18. Explique para qué son empleados los punteros dobles en C++. Proporcione ejemplos de situaciones en las que los punteros dobles son necesarios o beneficiosos.
+Un puntero doble se encarga de almacenar la dirección de memoria de otro puntero. Como Inception, sueño dentro de un sueño. Entonces, un puntero doble apunta hacia la dirección de memoria de un puntero simple. Se les puede sacar el mayor provecho cuando se está trabajando con arreglos bidimensionales, matrices dinámicas y en la manipulación de memorias. Cuando se trate de manipulación de memoria más elaborada o compleja, o cuando una función modifica un puntero original.
+
 ## 19. ¿Cuál es la diferencia entre un break y un continue en los bucles de C++?
 ## 20. ¿Para qué se utiliza la directiva #ifndef?
 ## 21. ¿Qué es el puntero this en C++?
