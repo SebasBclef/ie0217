@@ -133,6 +133,9 @@ for (int i = 0; i < 10 && !salir; ++i) {
 ```
 
 ## 15. ¿Dónde y cómo se guardan las variables que se crean en C++? Explique la diferencia entre el almacenamiento de variables locales y globales.
+Las **variables locales** son creadas cuando la función en el que están declaradas es ejecutado, y se eliminan una vez que se termina la ejecución del mismo. Estas variables se almacenan en el **stack** de la memoria, cuando estas variables son automáticas. Caso contrario, son variables con duración dinámica se crean y se destruyen explícitamente por la persona que esté desarrollando el código, a través de funciones como **new y delete**. Estas variables locales se almacenan en el heap.
+
+Por otro lado, las **variables globales** tienen una duración estática, lo que significa que **existen durante toda la ejecución del programa**, lo que significa que se deben almacenar en una región de la memoria llamada **segmento de datos.**
 ## 16. ¿Cuál es la diferencia entre pasar parámetros por valor, por referencia y por puntero?
 ## 17. Cuando se usa un puntero para apuntar a un arreglo en C++, ¿a qué valor o dirección apunta inicialmente? Describa cómo sería la forma de acceder a todos los datos de ese arreglo mediante el puntero.
 ## 18. Explique para qué son empleados los punteros dobles en C++. Proporcione ejemplos de situaciones en las que los punteros dobles son necesarios o beneficiosos.
