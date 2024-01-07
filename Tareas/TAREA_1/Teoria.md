@@ -52,9 +52,9 @@ Al usar una variable global en una función, esta función puede acceder y modif
 ## 9. Investigue y explique tres métodos comunes de la biblioteca string en C++.
 La biblioteca string proporciona una gama de funciones para manipular cadenas de carácteres de manera eficiente. 3 de estos son:
 
-- George Washington
-* John Adams
-+ Thomas Jefferson
+- size()
+* substr()
++ find()
 
 
 
