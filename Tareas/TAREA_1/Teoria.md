@@ -56,6 +56,7 @@ La biblioteca string proporciona una gama de funciones para manipular cadenas de
 * substr(): Se utiliza para sacar una subcadena de una cadena más grande, y toma dos argumentos, siendo estos la posición inicial y la longitud de la subcadena que se desea extraer.
 + find(): Se utiliza para buscar cuando ocurre una subcadena, por primera vez, dentro de otra cadena. Este devuelve la posición de ésta primera posición de la subcadena.
 ## 10. ¿Cuál es la principal diferencia entre un bucle do-while y un bucle while?
+La diferencia principal es que el bucle "do-while" garantiza que el código se ejectue al menos una sola vez, incluso si la condición del bucle es falsa desde el principio. El bucle "while", por otro lado, verifica la condición antes de ejecutar el código en general. Entonces, en el "do-while", primero se ejecuta al menos una vez y luego se vé la condición. En el "while" se vé la condición primero, y luego se ejecuta el código.
 ## 11. ¿Es permitido almacenar funciones en una estructura en C++? En el caso de los datos, ¿se pueden encapsular en miembros privados y públicos dentro de una estructura? Explique su respuesta.
 ## 12. Explique por qué es útil y común dividir el código en archivos .hpp, .cpp y main.cpp en C++. Describa el propósito específico de cada tipo de archivo.
 ## 13. Defina qué es el Type Casting en C++ y explique su utilidad. Proporcione ejemplos de situaciones en las que se emplea el Type Casting y cómo se realiza.
