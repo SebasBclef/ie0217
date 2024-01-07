@@ -15,7 +15,10 @@ Entonces, los lenguajes compilados permiten mayor control sobre los recursos dis
 Un linker permite enlazar varios archivos en el proceso de compilación, y lo hace a través de un ejecutable (.exe). Algunas de sus funciones principales incluyen asociar símbolos (variables, nombres de funciones), a un espacio en de memoria real; también es capaz de enlazar bibliotecas con el código fuente, para que éste  se pueda ejecutar de manera coherente y se encarga de conectar las llamadas de funciones que hace el código fuente con los archivos en los que estén dichas funciones. Por otro lado, el linker convierte las direcciones de memoria utilizadas por los archivos objeto en direcciones de memoria absoluta. La inclusión de un linker es crucial, ya que sin este, no se puede juntar todo en un solo ejecutable (.exe).
 
 ## 4. Describa las diferencias clave entre los tipos de datos derivados y primarios en C++.
+Los **datos derivados** incluyen las funciones, arrays, punteros y referencias. Mientras que los **datos primarios** son los integers, characters, booleanos, puntos flotantes, puntos flotantes dobles, voids y wide characters. La diferencia clave es que unos se meten en otros, como juguetes en una caja. Los datos primeros serían los juguetes que van dentro los datos derivados, que propiamente son la caja. Dejando la analogía de la caja, también se puede ver que los datos derivados nacen derivando o combinando los datos primarios o básicos.
+
 ## 5. Defina qué significa inicializar y declarar una variable.
+Cuando **se inicializa**
 ## 6. ¿Qué es la sobrecarga de funciones en C++ y cuáles son sus beneficios?
 ## 7. ¿Qué es un puntero y cómo se utiliza? Explique con un ejemplo de la vida real.
 ## 8. ¿Una variable global almacena el valor original de una operación en una función o una copia? Explique su respuesta. Explique por qué se elige usar variables globales en lugar de locales en ciertos contextos.
