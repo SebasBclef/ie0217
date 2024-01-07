@@ -144,8 +144,9 @@ Las diferencias principales son:
 * Parámetros por Referencia: En este caso, se pasa la referencia al argumento original, permitiendo modificar el valor directamente. Su sintáxis es ** void function (int &referencia)**. En este caso, los cambos dentro de la función afectan el argumento original, y es útil cuando el interés es modificar el valor original del argumento.
 + Parámetros por Puntero : Es bastante similar a pasar por referencia, pero se utiliza un puntero. Permite la manipulación directa del valor original, con el cuidado que se debe tener cuando se trabaja con punteros. Sun sintáxis es **void function(int * puntero )**
 
-
 ## 17. Cuando se usa un puntero para apuntar a un arreglo en C++, ¿a qué valor o dirección apunta inicialmente? Describa cómo sería la forma de acceder a todos los datos de ese arreglo mediante el puntero.
+
+
 ## 18. Explique para qué son empleados los punteros dobles en C++. Proporcione ejemplos de situaciones en las que los punteros dobles son necesarios o beneficiosos.
 ## 19. ¿Cuál es la diferencia entre un break y un continue en los bucles de C++?
 ## 20. ¿Para qué se utiliza la directiva #ifndef?
