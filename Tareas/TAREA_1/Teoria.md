@@ -174,7 +174,7 @@ De la manera más literal, es una manera de decir **puntero nulo**. Este es un p
 ## 23. ¿Cuál es la diferencia entre un arreglo y una lista en C++?
 Ambas son estructuras de datos que almacenan colecciones de elementos. Primeramente, un **arreglo** o **array** es una estructura de tamaño fijo; una vez definido su tamaño, no puede cambiarse su estructura de manera dinámica durante la ejecución del programa. Por otro lado, la asignación de memoria para el arreglo se asgina en el momento de la declaración, y este también es fijo. Sin embargo, el acceso a los elementos del arreglo es rápido, fácil y directo. Finalmente, el arreglo puede ser menos eficiente para insertar o eliminar elementos en posiciones intermedias.
 
-Por otro lado, una **lista** tiene un tamaño dinámico, su estructura puede ser cambiada durante la ejecución del programa. La memoria, al igual que su tamaño, de puede agregar dinámicamente 
+Por otro lado, una **lista** tiene un tamaño dinámico, su estructura puede ser cambiada durante la ejecución del programa. La memoria, al igual que su tamaño, se puede agregar dinámicamente durante la ejecución- Por otro lado, accesar a los elementos de una lista suele ser más laborioso, ya que hay que iterar o utilizar métodos específicos para poder hacer eso. Debido a la estructura dinámica de la lista, puede ser menos eficiente que un arreglo. Ahora, realizar inserciones y eliminaciones en una lista es más fácil y eficiente, ya que no es necesario el desplazamiento de elementos.
 ## 24. ¿Qué es una funcién prototipo?
 ## 25. ¿Investigue qué es un memory leak?
 
