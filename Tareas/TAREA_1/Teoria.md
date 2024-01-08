@@ -162,6 +162,9 @@ int main() {
 Un puntero doble se encarga de almacenar la dirección de memoria de otro puntero. Como Inception, sueño dentro de un sueño. Entonces, un puntero doble apunta hacia la dirección de memoria de un puntero simple. Se les puede sacar el mayor provecho cuando se está trabajando con arreglos bidimensionales, matrices dinámicas y en la manipulación de memorias. Cuando se trate de manipulación de memoria más elaborada o compleja, o cuando una función modifica un puntero original.
 
 ## 19. ¿Cuál es la diferencia entre un break y un continue en los bucles de C++?
+Tanto el **break y el continue** son utilizados de manera extensiva en bucles, para así poder controlar el flujo de ejecución:
+- **Break**: Se utiliza para *romper* y salir de manera inmediata de un bucle. El programa busca salir por el bucle más cercano, y la ejecución continúa con la primera instrucción que vea después del bucle.
+* **Continue**: Se utiliza para pasar a la siguiente iteración de un bucle, omitiendo todo lo que siga en el bucle. Cuando el código se encuentra un *Continue*, se salta el resto del bloque de código dentro del bucle.
 ## 20. ¿Para qué se utiliza la directiva #ifndef?
 ## 21. ¿Qué es el puntero this en C++?
 ## 22. ¿Qué es un puntero nullptr?
