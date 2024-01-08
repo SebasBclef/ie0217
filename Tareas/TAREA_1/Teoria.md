@@ -166,6 +166,7 @@ Tanto el **break y el continue** son utilizados de manera extensiva en bucles, p
 - **Break**: Se utiliza para *romper* y salir de manera inmediata de un bucle. El programa busca salir por el bucle más cercano, y la ejecución continúa con la primera instrucción que vea después del bucle.
 * **Continue**: Se utiliza para pasar a la siguiente iteración de un bucle, omitiendo todo lo que siga en el bucle. Cuando el código se encuentra un *Continue*, se salta el resto del bloque de código dentro del bucle.
 ## 20. ¿Para qué se utiliza la directiva #ifndef?
+El #ifndef, se utiliza para evitar la que se incluyan múltiples veces un mismo archivo de encabezado (header). Entonces, usualmente se utiliza en conjunto a **#define y #endif** para crear una inclusión que sea condicionada, para evitar la duplicación.
 ## 21. ¿Qué es el puntero this en C++?
 ## 22. ¿Qué es un puntero nullptr?
 ## 23. ¿Cuál es la diferencia entre un arreglo y una lista en C++?
