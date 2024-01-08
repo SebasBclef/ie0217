@@ -170,6 +170,7 @@ El #ifndef, se utiliza para evitar la que se incluyan múltiples veces un mismo 
 ## 21. ¿Qué es el puntero this en C++?
 **This** es un puntero implícito, el cual se utiliza para referise al objeto **actual** en el que se está ejecutando el código. Este puntero se utiliza para diferenciar entre los miembros de una clase y para acceder a los miembros del objeto actual. El puntero **this** apunta al objeto para el cuál se invocó el método. Siguiendo con la analogía de la casa, nuesra casa sería la **clase**, y cada objeto dentro de esa clase es como una casa en un vecindario. Entonces, dentro de nuestra casa hay cosas (funciones o métodos), que pueden interactuar con las cosas dentro de esa casa. Entonces, el puntero **this** es una etiqueta que llevo yo, que me permite referirme a las cosas dentro de **mi** casa, y no a la de los vecinos.
 ## 22. ¿Qué es un puntero nullptr?
+De la manera más literal, es una manera de decir **puntero nulo**. Este es un puntero que no apunta a ningún lado, o para representar la ausencia o falta de dirección de memoria,significa que no apunta a ninguna ubicación de memoria específica.
 ## 23. ¿Cuál es la diferencia entre un arreglo y una lista en C++?
 ## 24. ¿Qué es una funcién prototipo?
 ## 25. ¿Investigue qué es un memory leak?
