@@ -16,24 +16,24 @@ void procesarOpcion(Info& info){
     std::cin>>opcion;
     switch(opcion){
 
-        case 1://Iniciando el juego
-        Iniciar_Juego(info);
+        /*case 1://Iniciando el juego       aqui debo meter el numero de intentos y generar el numero.
+        Iniciar_Juego(numeroUsuario);
         break;
 
         case 2: //Funcion para Escoger la dificultad Facil
-        Dificultad_Facil();
+        Dificultad_Facil(info);
         break;
 
         case 3: //Funcion para Escoger la dificultad Dificil
-        Dificultad_Dificil ();
-        break;
+        Dificultad_Dificil (info);
+        break;*/
 
         case 4: ////Funcion para Escoger el intervalo
         Escoger_Intervalo(info);
         break;
 
         case 5://Salir del juego
-        std:: cout <<"Saliendo del programa...\n";
+        std:: cout <<"Saliendo del programa. Gracias por jugar :D\n";
         exit(0);
 
         default:
@@ -50,3 +50,18 @@ int DefinirIntentos(const Info& dato){//Esta funcion define la cantidad de inten
     int N = Tamano_Intervalo / 3;
     return N;
 }
+
+
+void Escoger_Intervalo(Info& info){
+    std:: cout <<"-----ESCOGIENDO INTERVALO------\n";
+    std:: cout <<"Por favor, escoja el valor minimo del intervalo: "; std::cin>>info.min;
+    std:: cout <<"Por favor, escoja el valor maximo del intervalo: "; std::cin>>info.max;
+
+    while (info.max <= info.min){
+        std:: cout <<"El valor max debe ser mayor que el valor min, digite otro numero. \n ";
+        std:: cout << "Ingrese el valor max del intervalo otra vez: ";
+        std:: cin >> info.max;
+    }
+    std::cout << "Su intervalo es (" << info.min << "," << info.max << ").\n";
+}
+    

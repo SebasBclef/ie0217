@@ -15,13 +15,8 @@ void procesarOpcion(Info& info);
 void Iniciar_Juego();
 void Dificultad_Facil();
 void Dificultad_Dificil();
-void Escoger_Intervalo();
+void Escoger_Intervalo(Info& info);
 int  DefinirIntentos(const Info& dato);
-
-
-
-
-
 
 
 #endif
