@@ -1,5 +1,6 @@
 #include <iostream>
 #include "funciones.hpp"
+#include <cstdlib>
 
 int main() {
     Info info;
