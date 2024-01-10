@@ -2,7 +2,15 @@
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
+/**
+ * @file funciones.hpp
+ *
+ * @brief Contiene las declaraciones de funciones y estructuras para el juego de adivinar números.
+ */
 
+/**
+ * @brief Muestra el menú principal del programa.
+ */
 
 void MostrarMenu (){ //Esta funcion ejecuta el menu.
     std::cout << "\n ---MENU---\n";
@@ -11,7 +19,10 @@ void MostrarMenu (){ //Esta funcion ejecuta el menu.
     std::cout << "\n 3. Escoger Intervalo de Valores Deseado\n";
     std::cout << "\n 4. Salir\n";
 }
-
+/**
+ * @brief Procesa la opción seleccionada por el usuario en el menú.
+ * @param info Referencia a la estructura Info que contiene los datos del juego.
+ */
 void procesarOpcion(Info& info){
     int opcion;
     static bool rangoDefinido = false;//se define asi para garantizar que en cada iteracion, el rango se inicializa en 0
@@ -42,21 +53,36 @@ void procesarOpcion(Info& info){
         std:: cout <<"Saliendo del programa. Gracias por jugar :D\n";
         exit(0);
 
-        default:
+        default://Por si se escoge algo no valido
         std:: cout << "Opcion no valida. Intente de Nuevo...\n";   
         }
     }
 
+/**
+ * @brief Define el número de intentos permitidos según la configuración actual.
+ * @param dato Estructura Info que contiene los datos del juego.
+ * @return Número de intentos permitidos.
+ */
 int DefinirIntentos(const Info& dato){//Esta funcion define la cantidad de intentos que tiene el usuario
     int Tamano_Intervalo = dato.max - dato.min + 1;//Toma la diferencia entre el valor maximo, y el valor minimo para el intervalo
     int N = Tamano_Intervalo / 3;
     return N;
 }
+/**
+ * @brief Genera un número aleatorio en el rango especificado.
+ * @param min Valor mínimo del rango.
+ * @param max Valor máximo del rango.
+ * @return Número aleatorio generado.
+ */
 
 int Generar_Numero(int min, int max){
     return min + rand() % (max - min +1);
 }
 
+/**
+ * @brief Inicia el juego con la configuración actual.
+ * @param info Referencia a la estructura Info que contiene los datos del juego.
+ */
 void Iniciar_Juego(Info& info){
     int numero_juego = Generar_Numero(info.min,info.max);
     std:: cout << "\n--------Empezando Juego--------\n";
@@ -120,7 +146,10 @@ void Iniciar_Juego(Info& info){
     }
 }
     }
-
+/**
+ * @brief Permite al usuario escoger el intervalo de números.
+ * @param info Referencia a la estructura Info que contiene los datos del juego.
+ */
 void Escoger_Intervalo(Info& info){
     std:: cout <<"-----ESCOGIENDO INTERVALO------\n";
     std:: cout <<"Por favor, escoja el valor minimo del intervalo: "; std::cin>>info.min;
@@ -133,7 +162,10 @@ void Escoger_Intervalo(Info& info){
     }
     std::cout << "Su intervalo es (" << info.min << "," << info.max << ").\n";
 }
-
+/**
+ * @brief Establece el modo difícil en la estructura Info.
+ * @param info Referencia a la estructura Info que contiene los datos del juego.
+ */
 void Dificultad_Dificil(Info& info){
     info.modoDificil = true; // Modo difícil
     std::cout << "Dificultad establecida a Difícil.\n";
