@@ -103,16 +103,16 @@ void Iniciar_Juego(Info& info){
 
         if (distancia == 0) {
             std::cout << "Adivinaste el numero!!! Ganaste! Me salvaste!\n";
-        } else if (distancia <= 11) {
-            std::cout << "ESTAS EN LLAMAS, MUY CERCA, AAAAAAAAGGH. PRUEBA OTRO NUMERO. Le quedan " << --attempt_rest << " intentos.\n";
+        } else if (distancia <= 1) {
+            std::cout << "ESTAS EN LLAMAS, MUY CERCA, AAAAAAAAGGH. PRUEBA OTRO NUMERO. Le quedan " << (attempt_rest-=2) << " intentos.\n";
         } else if (distancia <= 3) {
-            std::cout << "Estas entrando en calor, poco poco. Te quedan " << --attempt_rest << " intentos.\n";
+            std::cout << "Estas entrando en calor, poco poco. Te quedan " <<  (attempt_rest-=2) << " intentos.\n";
         } else if (distancia <= 5) {
-            std::cout << "Estas frio, y estoy lejos de caaaaaaaasaaaaa. Te quedan " << --attempt_rest << " intentos.\n";
+            std::cout << "Estas frio, y estoy lejos de caaaaaaaasaaaaa. Te quedan " <<  (attempt_rest-=2) << " intentos.\n";
         } else if (distancia <= info.max) {
-            std::cout << "Me congele bro. Te quedan " << --attempt_rest << " intentos.\n";
+            std::cout << "Me congele bro. Te quedan " <<  (attempt_rest-=2) << " intentos.\n";
         }
-
+//fin de codigo para el modo dificil. Aqui, se penalizan mas duro las fallas.
         if (attempt_rest == 0) {
             std::cout << "Se le acabaron los intentos, perdio. El numero era " << numero_juego << ". Buuuuu.Me quemeeeeee y duele mucho :(\n";
             break;
