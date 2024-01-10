@@ -1,6 +1,7 @@
 #include "funciones.hpp"
 #include <iostream>
 #include <cstdlib>
+#include <cmath>
 
 
 void MostrarMenu (){ //Esta funcion ejecuta el menu.
@@ -13,14 +14,14 @@ void MostrarMenu (){ //Esta funcion ejecuta el menu.
 
 void procesarOpcion(Info& info){
     int opcion;
-    static bool rangoDefinido = false;
+    static bool rangoDefinido = false;//se define asi para garantizar que en cada iteracion, el rango se inicializa en 0
 
     std::cout<< "Ingrese una opcion: ";
     std::cin>>opcion;
 
     switch(opcion){
         case 1://Iniciando el juego  
-        if (info.modoDificil&& rangoDefinido&& info.max> info.min){
+        if (info.modoDificil&& rangoDefinido&& info.max> info.min){//este if hace que se encicle el menu hasta que reciba el rango
             Iniciar_Juego(info);
         } else{
             std::cout<<"Debe definir un rango valido antes de iniciar el juego.\n";
@@ -29,6 +30,7 @@ void procesarOpcion(Info& info){
 
         case 2: //Funcion para Escoger la dificultad Dificil
         Dificultad_Dificil (info);
+         std::cout<< info.modoDificil<<std::endl;
         break;
 
         case 3: ////Funcion para Escoger el intervalo
@@ -55,36 +57,69 @@ int Generar_Numero(int min, int max){
     return min + rand() % (max - min +1);
 }
 
-void Iniciar_Juego(Info& info, bool modoDificil){
-
+void Iniciar_Juego(Info& info){
     int numero_juego = Generar_Numero(info.min,info.max);
-
     std:: cout << "\n--------Empezando Juego--------\n";
     int attempt;
     int attempt_rest= DefinirIntentos(info);////Para delimitar la cantidad de intentos.
+
     std:: cout << "Adivine el numero entre "<<info.min<< " y "<<info.max<<". Tiene "<<attempt_rest<<" intentos.\n";
     bool success= false;
-
-    while (!success && attempt_rest > 0){
+    
+    if (info.modoDificil==false){//Esta es la condicional para que se ejecute el modo facil, o el dificil.
+        while (!success && attempt_rest > 0){
         std:: cout << "Ingrese su intento: ";
         std:: cin >> attempt;
 
-        if(attempt< numero_juego){
+        if(attempt < numero_juego){
             std::cout<<"El numero es mayor.Le quedan "<<--attempt_rest<<" intentos.";
         } else if (attempt>numero_juego){
             std::cout<<"El numero es menor.Le quedan "<<--attempt_rest<<" intentos.";
-        } else {
+        } else { 
             std::cout<< "Lograste adivinar el numero. Felicidades!!!!\n";
             success = true;
         }
-
-
-        if (attempt_rest==0){
-            std::cout<<"Se le acabaron los intentos, perdio. El numero era "<< numero_juego <<" .Buuuuu.\n";
+            
+        if (attempt_rest==0){ 
+            std::cout<<"Se le acabaron los intentos, perdio. El numero era "<< numero_juego <<". Buuuuu.\n";
         }
+
         std::cout<<std::endl;
+        }//fin de codigo en modo facil
+
+} else {
+    std::cout << "Modo Difícil: " << info.modoDificil << std::endl;
+    while (!success && attempt_rest > 0) {
+        std::cout << "Ingrese su intento, MODO DIFICIL: ";
+        std::cin >> attempt;
+
+        if (attempt == numero_juego) {
+            std::cout << "Lograste adivinar el numero y me apagaste las llamas! Felicidades!!!!\n";
+            success = true;
+            break;
+        }
+
+        int distancia = std::abs(numero_juego - attempt);
+
+        if (distancia == 0) {
+            std::cout << "Adivinaste el numero!!! Ganaste! Me salvaste!\n";
+        } else if (distancia <= 11) {
+            std::cout << "ESTAS EN LLAMAS, MUY CERCA, AAAAAAAAGGH. PRUEBA OTRO NUMERO. Le quedan " << --attempt_rest << " intentos.\n";
+        } else if (distancia <= 3) {
+            std::cout << "Estas entrando en calor, poco poco. Te quedan " << --attempt_rest << " intentos.\n";
+        } else if (distancia <= 5) {
+            std::cout << "Estas frio, y estoy lejos de caaaaaaaasaaaaa. Te quedan " << --attempt_rest << " intentos.\n";
+        } else if (distancia <= info.max) {
+            std::cout << "Me congele bro. Te quedan " << --attempt_rest << " intentos.\n";
+        }
+
+        if (attempt_rest == 0) {
+            std::cout << "Se le acabaron los intentos, perdio. El numero era " << numero_juego << ". Buuuuu.Me quemeeeeee y duele mucho :(\n";
+            break;
+        }
     }
 }
+    }
 
 void Escoger_Intervalo(Info& info){
     std:: cout <<"-----ESCOGIENDO INTERVALO------\n";
@@ -103,5 +138,3 @@ void Dificultad_Dificil(Info& info){
     info.modoDificil = true; // Modo difícil
     std::cout << "Dificultad establecida a Difícil.\n";
 }
-
-    

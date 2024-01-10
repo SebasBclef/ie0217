@@ -14,7 +14,7 @@ struct Info {//Struct para definir los datos necesarios para que el programa cor
 void MostrarMenu();
 
 void procesarOpcion(Info& info);
-void Iniciar_Juego(Info& info, bool modoDificil=false);
+void Iniciar_Juego(Info& info);
 void Dificultad_Dificil(Info& info);
 void Escoger_Intervalo(Info& info);
 int  DefinirIntentos(const Info& dato);
