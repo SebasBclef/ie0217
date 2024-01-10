@@ -22,6 +22,23 @@ SOURCES = funciones.cpp main.cpp
 
 OBJECTS = $(SOURCES: .cpp = .exe)
 
+##Verificacion del Sistema Operativo
+ifeq ($(OS),Windows_NT)
+    RM = del /Q
+    TARGET_EXTENSION = .exe
+	OS_MESSAGE= Este OS es Windows
+else
+    RM = rm -f
+    TARGET_EXTENSION =
+	OS_MESSAGE=Este OS es Unix/Linux
+endif
+
+## Regla para imprimir mensaje del sistema operativo
+.PHONY: os_message
+os_message:
+	@echo "$(OS_MESSAGE)"
+
+
 #Regla para compilar los archivos fuentes en archivos objeto
 
 %.o: %.cpp
