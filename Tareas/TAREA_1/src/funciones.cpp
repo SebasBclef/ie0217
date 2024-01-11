@@ -15,7 +15,7 @@
 void MostrarMenu (){ //Esta funcion ejecuta el menu.
     std::cout << "\n ---MENU---\n";
     std::cout << "\n 1. Iniciar Juego\n";
-    std::cout << "\n 2. Escoger Dificultad: Difícil\n";
+    std::cout << "\n 2. Escoger Dificultad: Dificil\n";
     std::cout << "\n 3. Escoger Intervalo de Valores Deseado\n";
     std::cout << "\n 4. Salir\n";
 }
@@ -114,7 +114,7 @@ void Iniciar_Juego(Info& info){
         }//fin de codigo en modo facil
 
 } else {
-    std::cout << "Modo Difícil: " << info.modoDificil << std::endl;
+    std::cout << "Modo Dificil: " << info.modoDificil << std::endl;
     while (!success && attempt_rest > 0) {
         std::cout << "Ingrese su intento, MODO DIFICIL: ";
         std::cin >> attempt;
@@ -168,5 +168,5 @@ void Escoger_Intervalo(Info& info){
  */
 void Dificultad_Dificil(Info& info){
     info.modoDificil = true; // Modo difícil
-    std::cout << "Dificultad establecida a Difícil.\n";
+    std::cout << "Dificultad establecida a Dificil.\n";
 }
