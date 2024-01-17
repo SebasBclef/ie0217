@@ -3,7 +3,7 @@
 #include "material_audiovisual.hpp"
 #include <iostream>
 
-int main() {
+int prueba3() {
     // Crear instancias de materiales con información heredada
     MaterialLectura* materialLectura = new MaterialLectura("Título Lectura", "Autor Lectura", "Libro", "Editorial", "Ficción", "Disponible", 300, 19.99);
     MaterialAudiovisual* materialAudiovisual = new MaterialAudiovisual("Título Audiovisual", "Director Audiovisual", "Película", "Drama", "Prestado", 120, 10.99);

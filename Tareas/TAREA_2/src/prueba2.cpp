@@ -3,7 +3,7 @@
 #include <iostream>
  // Asumiendo que tienes una clase Pelicula derivada de MaterialAudiovisual
 
-int main() {
+int prueba2() {
     // Crear instancias de material
     Pelicula* pelicula1 = new Pelicula("Pelicula 1", "Autor 1", "Genero 1", "Disponible", 120, 10.99, "Resumen 1", "Relacionado 1");
     Pelicula* pelicula2 = new Pelicula("Pelicula 2", "Autor 2", "Genero 2", "Prestado", 90, 8.99, "Resumen 2", "Relacionado 2");
