@@ -1,8 +1,18 @@
+/**
+ * @file prueba3.cpp
+ * @brief Programa de prueba que demuestra el uso de MaterialPrecio con instancias de MaterialLectura y MaterialAudiovisual.
+ */
+
 #include "MaterialPrecio.hpp"
 #include "material_lectura.hpp"
 #include "material_audiovisual.hpp"
 #include <iostream>
 
+/**
+ * @brief Función de prueba que crea instancias de MaterialLectura y MaterialAudiovisual, las agrega a MaterialPrecio,
+ *        y muestra la información ordenada por precio ascendentemente y descendentemente.
+ * @return 0 si la ejecución es exitosa.
+ */
 int prueba3() {
     // Crear instancias de materiales con información heredada
     MaterialLectura* materialLectura = new MaterialLectura("Título Lectura", "Autor Lectura", "Libro", "Editorial", "Ficción", "Disponible", 300, 19.99);
