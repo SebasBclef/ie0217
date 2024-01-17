@@ -1,5 +1,11 @@
 # Tarea 2,IE-0207,Sebastián Bonilla Vega, C01263.
 ##  INSTRUCCIONES PARA COMPILAR
+Se deben ejecutar los siguientes comandos:
+- **make:** para compilar el codigo
+- **make clean:** para borrar archivos residuales o borrar todos los ejecutables
+- **/.programa.exe:** para ejecutar el programa
+
+La idea del programa es que, al ejecutar el codigo, se impriman las 3 pruebas para ver que compilan correctamente. Al decir el enunciado que el cliente tenia acceso de administrador, se asumio que iba a tener acceso al codigo e iba a saber que editar. Habiendo dicho esto, en prueba 1 lo que se busco implementar fue la primera funcionalidad del codigo, donde se guardan las clases de medios audio visuales y se subdividen en las clases que se solicito. En la prueba 2, se busco implementar la funcionalidad de agregar o borrar medios a las clases. Para la prueba 3, igualmente se busco implementar la funcionalidad de acomodar los multimedios basado en su precio en orden tanto ascendente como descendente.
 ## Teoria Parte C++.
 ### ***1. Conceptos Fundamentales:*** Define que es la programacion orientada a objetos y explica sus principios fundamentales.
 La OOP organiza el código a través de objetos, dentro de los cuales se pueden instanciar clases. Permite:
