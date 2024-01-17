@@ -1,49 +1,51 @@
-#include "materialPrecio.hpp"
-#include <algorithm> // Para std::sort
+#include "MaterialPrecio.hpp"
+#include <algorithm>
 #include <iostream>
 
 MaterialPrecio::MaterialPrecio() {
     // Inicializar vectores si es necesario
 }
 
+void MaterialPrecio::agregarMaterial(MaterialLectura* material) {
+    listaMaterialesLectura.push_back(material);
+}
+
+void MaterialPrecio::agregarMaterial(MaterialAudiovisual* material) {
+    listaMaterialesAudiovisual.push_back(material);
+}
+
 void MaterialPrecio::ordenarAscendentemente() {
-    // Ordenar materiales de lectura por precio ascendente
-    std::sort(materialesLectura.begin(), materialesLectura.end(), 
+    std::sort(listaMaterialesLectura.begin(), listaMaterialesLectura.end(),
               [](const MaterialLectura* a, const MaterialLectura* b) {
                   return a->getPrecio() < b->getPrecio();
               });
 
-    // Ordenar materiales audiovisuales por precio ascendente
-    std::sort(materialesAudiovisual.begin(), materialesAudiovisual.end(),
+    std::sort(listaMaterialesAudiovisual.begin(), listaMaterialesAudiovisual.end(),
               [](const MaterialAudiovisual* a, const MaterialAudiovisual* b) {
                   return a->getPrecio() < b->getPrecio();
               });
 }
 
 void MaterialPrecio::ordenarDescendentemente() {
-    // Ordenar materiales de lectura por precio descendente
-    std::sort(materialesLectura.begin(), materialesLectura.end(), 
+    std::sort(listaMaterialesLectura.begin(), listaMaterialesLectura.end(),
               [](const MaterialLectura* a, const MaterialLectura* b) {
                   return a->getPrecio() > b->getPrecio();
               });
 
-    // Ordenar materiales audiovisuales por precio descendente
-    std::sort(materialesAudiovisual.begin(), materialesAudiovisual.end(),
+    std::sort(listaMaterialesAudiovisual.begin(), listaMaterialesAudiovisual.end(),
               [](const MaterialAudiovisual* a, const MaterialAudiovisual* b) {
                   return a->getPrecio() > b->getPrecio();
               });
 }
 
 void MaterialPrecio::mostrarMaterialesOrdenados() const {
-    // Mostrar materiales de lectura ordenados
     std::cout << "Materiales de Lectura Ordenados:" << std::endl;
-    for (const auto& material : materialesLectura) {
+    for (const auto& material : listaMaterialesLectura) {
         std::cout << "Título: " << material->getTitulo() << ", Precio: " << material->getPrecio() << std::endl;
     }
 
-    // Mostrar materiales audiovisuales ordenados
     std::cout << "\nMateriales Audiovisuales Ordenados:" << std::endl;
-    for (const auto& material : materialesAudiovisual) {
+    for (const auto& material : listaMaterialesAudiovisual) {
         std::cout << "Título: " << material->getTitulo() << ", Precio: " << material->getPrecio() << std::endl;
     }
 }

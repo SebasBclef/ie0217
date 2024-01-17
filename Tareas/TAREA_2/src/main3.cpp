@@ -1,18 +1,19 @@
 #include "MaterialPrecio.hpp"
-#include "pelicula.hpp"
 #include "material_lectura.hpp"
 #include "material_audiovisual.hpp"
 #include <iostream>
 
 int main() {
-    // Crear instancias de materiales
-    Pelicula* pelicula1 = new Pelicula("Pelicula 1", "Director 1", "Genero 2", "Prestado", 120, 10.99, "Resumen 1", "Relacionado 1");
+    // Crear instancias de materiales con información heredada
+    MaterialLectura* materialLectura = new MaterialLectura("Título Lectura", "Autor Lectura", "Libro", "Editorial", "Ficción", "Disponible", 300, 19.99);
+    MaterialAudiovisual* materialAudiovisual = new MaterialAudiovisual("Título Audiovisual", "Director Audiovisual", "Película", "Drama", "Prestado", 120, 10.99);
 
     // Crear una instancia de MaterialPrecio
     MaterialPrecio materialPrecio;
 
     // Agregar materiales a MaterialPrecio
-    materialPrecio.agregarMaterial(static_cast<MaterialAudiovisual*>(pelicula1));
+    materialPrecio.agregarMaterial(materialLectura);
+    materialPrecio.agregarMaterial(materialAudiovisual);
 
     // Mostrar información de los materiales ordenados
     std::cout << "Materiales Ordenados por Precio Ascendentemente:" << std::endl;
@@ -24,7 +25,8 @@ int main() {
     materialPrecio.mostrarMaterialesOrdenados();
 
     // Liberar la memoria de los materiales
-    delete pelicula1;
+    delete materialLectura;
+    delete materialAudiovisual;
 
     return 0;
 }

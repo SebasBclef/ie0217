@@ -1,5 +1,3 @@
-// MaterialPrecio.hpp
-
 #ifndef MATERIALPRECIO_HPP
 #define MATERIALPRECIO_HPP
 
@@ -11,14 +9,15 @@ class MaterialPrecio {
 public:
     MaterialPrecio();
 
+    void agregarMaterial(MaterialLectura* material);
     void agregarMaterial(MaterialAudiovisual* material);
     void ordenarAscendentemente();
     void ordenarDescendentemente();
     void mostrarMaterialesOrdenados() const;
 
 private:
-    std::vector<MaterialLectura*> materialesLectura;
-    std::vector<MaterialAudiovisual*> materialesAudiovisual;
+    std::vector<MaterialLectura*> listaMaterialesLectura;
+    std::vector<MaterialAudiovisual*> listaMaterialesAudiovisual;
 };
 
 #endif // MATERIALPRECIO_HPP
