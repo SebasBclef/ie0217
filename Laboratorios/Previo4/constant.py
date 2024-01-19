@@ -1,6 +1,0 @@
-PI=3.14
-Euler=3
-Gravedad=9.8
-NICE=69
-ELDIABLO=666
-Futurama=800815
