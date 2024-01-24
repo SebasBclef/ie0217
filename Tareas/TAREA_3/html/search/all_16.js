@@ -1,0 +1,8 @@
+var searchData=
+[
+  ['que_20es_20importante_20considerarla_20al_20disenar_20software_0',['&lt;em&gt;&lt;strong&gt;6. Politica de Manejo de Excepciones:&lt;/strong&gt;&lt;/em&gt; ¿Que es una polıtica de manejo de excepciones y por que es importante considerarla al disenar software?',['../md__r_e_a_d_m_e.html#autotoc_md9',1,'']]],
+  ['que_20las_20expresiones_20regulares_20son_20utiles_20para_20la_20validacion_20de_20patrones_20en_20cadenas_20de_20texto_1',['&lt;em&gt;&lt;strong&gt;15. Validacion de Patrones:&lt;/strong&gt;&lt;/em&gt; ¿Por que las expresiones regulares son utiles para la validacion de patrones en cadenas de texto?',['../md__r_e_a_d_m_e.html#autotoc_md20',1,'']]],
+  ['que_20podrıan_20ser_20utiles_2',['&lt;em&gt;&lt;strong&gt;5. Excepciones Estandar:&lt;/strong&gt;&lt;/em&gt; Nombre al menos tres excepciones estandar proporcionadas por C++ y proporciona ejemplos de situaciones en las que podrıan ser utiles.',['../md__r_e_a_d_m_e.html#autotoc_md8',1,'']]],
+  ['que_20situaciones_20serıa_20apropiado_20usar_20cada_20uno_3',['&lt;em&gt;&lt;strong&gt;8. Contenedores STL:&lt;/strong&gt;&lt;/em&gt; Nombre cinco contenedores diferentes de la STL y explique brevemente en que situaciones serıa apropiado usar cada uno.',['../md__r_e_a_d_m_e.html#autotoc_md12',1,'']]],
+  ['que_20son_20las_20expresiones_20regulares_20y_20proporcione_20un_20ejemplo_20simple_4',['&lt;em&gt;&lt;strong&gt;12. Definicion de Expresiones Regulares:&lt;/strong&gt;&lt;/em&gt;. ¿Defina que son las expresiones regulares y proporcione un ejemplo simple.',['../md__r_e_a_d_m_e.html#autotoc_md17',1,'']]]
+];

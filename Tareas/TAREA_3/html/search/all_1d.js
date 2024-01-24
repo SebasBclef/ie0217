@@ -1,0 +1,9 @@
+var searchData=
+[
+  ['¿como_20podria_20utilizar_20un_20algoritmo_20personalizado_20con_20la_20stl_0',['&lt;em&gt;&lt;strong&gt;11. Algoritmos Personalizados:&lt;/strong&gt;&lt;/em&gt; ¿Como podria utilizar un algoritmo personalizado con la STL?',['../md__r_e_a_d_m_e.html#autotoc_md15',1,'']]],
+  ['¿como_20se_20realiza_20la_20sobrecarga_20de_20funciones_20con_20plantillas_20en_20c_1',['&lt;em&gt;&lt;strong&gt;2. Sobrecarga de Plantillas:&lt;/strong&gt;&lt;/em&gt; ¿Como se realiza la sobrecarga de funciones con plantillas en C++?',['../md__r_e_a_d_m_e.html#autotoc_md4',1,'']]],
+  ['¿como_20se_20utilizan_20las_20expresiones_20regulares_20en_20c_20proporciona_20un_20ejemplo_2',['&lt;em&gt;&lt;strong&gt;14.  Uso de Expresiones Regulares en C++:&lt;/strong&gt;&lt;/em&gt; ¿Como se utilizan las expresiones regulares en C++? Proporciona un ejemplo.',['../md__r_e_a_d_m_e.html#autotoc_md19',1,'']]],
+  ['¿defina_20que_20son_20las_20expresiones_20regulares_20y_20proporcione_20un_20ejemplo_20simple_3',['&lt;em&gt;&lt;strong&gt;12. Definicion de Expresiones Regulares:&lt;/strong&gt;&lt;/em&gt;. ¿Defina que son las expresiones regulares y proporcione un ejemplo simple.',['../md__r_e_a_d_m_e.html#autotoc_md17',1,'']]],
+  ['¿por_20que_20las_20expresiones_20regulares_20son_20utiles_20para_20la_20validacion_20de_20patrones_20en_20cadenas_20de_20texto_4',['&lt;em&gt;&lt;strong&gt;15. Validacion de Patrones:&lt;/strong&gt;&lt;/em&gt; ¿Por que las expresiones regulares son utiles para la validacion de patrones en cadenas de texto?',['../md__r_e_a_d_m_e.html#autotoc_md20',1,'']]],
+  ['¿que_20es_20una_20polıtica_20de_20manejo_20de_20excepciones_20y_20por_20que_20es_20importante_20considerarla_20al_20disenar_20software_5',['&lt;em&gt;&lt;strong&gt;6. Politica de Manejo de Excepciones:&lt;/strong&gt;&lt;/em&gt; ¿Que es una polıtica de manejo de excepciones y por que es importante considerarla al disenar software?',['../md__r_e_a_d_m_e.html#autotoc_md9',1,'']]]
+];

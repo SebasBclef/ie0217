@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['noexcept_20y_20como_20se_20utiliza_20en_20c_0',['&lt;em&gt;&lt;strong&gt;7. Noexcept:&lt;/strong&gt;&lt;/em&gt; Explica el proposito de la palabra clave noexcept y como se utiliza en C++.',['../md__r_e_a_d_m_e.html#autotoc_md10',1,'']]],
+  ['noexcept_3a_20strong_20em_20explica_20el_20proposito_20de_20la_20palabra_20clave_20noexcept_20y_20como_20se_20utiliza_20en_20c_1',['&lt;em&gt;&lt;strong&gt;7. Noexcept:&lt;/strong&gt;&lt;/em&gt; Explica el proposito de la palabra clave noexcept y como se utiliza en C++.',['../md__r_e_a_d_m_e.html#autotoc_md10',1,'']]],
+  ['nombre_20al_20menos_20tres_20excepciones_20estandar_20proporcionadas_20por_20c_20y_20proporciona_20ejemplos_20de_20situaciones_20en_20las_20que_20podrıan_20ser_20utiles_2',['&lt;em&gt;&lt;strong&gt;5. Excepciones Estandar:&lt;/strong&gt;&lt;/em&gt; Nombre al menos tres excepciones estandar proporcionadas por C++ y proporciona ejemplos de situaciones en las que podrıan ser utiles.',['../md__r_e_a_d_m_e.html#autotoc_md8',1,'']]],
+  ['nombre_20cinco_20contenedores_20diferentes_20de_20la_20stl_20y_20explique_20brevemente_20en_20que_20situaciones_20serıa_20apropiado_20usar_20cada_20uno_3',['&lt;em&gt;&lt;strong&gt;8. Contenedores STL:&lt;/strong&gt;&lt;/em&gt; Nombre cinco contenedores diferentes de la STL y explique brevemente en que situaciones serıa apropiado usar cada uno.',['../md__r_e_a_d_m_e.html#autotoc_md12',1,'']]]
+];

@@ -1,0 +1,420 @@
+\chapter{Tarea 3,IE-\/0207,Sebastián Bonilla Vega, C01263.}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Tarea 3,IE-\/0207,Sebastián Bonilla Vega, C01263.@{Tarea 3,IE-\/0207,Sebastián Bonilla Vega, C01263.}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{INSTRUCCIONES PARA COMPILAR}{INSTRUCCIONES PARA COMPILAR}}\label{md__r_e_a_d_m_e_autotoc_md1}
+Se deben ejecutar los siguientes comandos\+:
+\begin{DoxyItemize}
+\item {\bfseries{make o make all\+:}} para compilar el codigo.
+\item {\bfseries{make clean\+:}} para borrar archivos objeto y borrar todos los ejecutables, recomendado hacer siempre una vez que ya se empezo a probar el programa.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}./main\+Matrices.exe\+:\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} para ejecutar el programa que corresponde a la parte 1, sobre matrices.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}./main\+Correo.exe\+:\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} para ejecutar el programa que corresponde a la parte 2, sobre correos.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{Templates\+:}{Templates\+:}}\label{md__r_e_a_d_m_e_autotoc_md2}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysubsection{\texorpdfstring{{\itshape {\bfseries{1. Definicion de Templates\+:}}} Explique el concepto de templates en C++ y proporcione un ejemplo simple.}{{\itshape {\bfseries{1. Definicion de Templates\+:}}} Explique el concepto de templates en C++ y proporcione un ejemplo simple.}}\label{md__r_e_a_d_m_e_autotoc_md3}
+Un "{}template"{}, se refiere a una funcionalidad del lenguaje que permite la creacion de codigo generico y reutilizable. Es una "{}plantilla"{}, que se puede usar para crear funciones, clases o estructuras de datos que pueden trabajar con varios tipos de datos, sin tener que especificarlos de antemano. El codigo siguiente, va a crear una funcion que va a intercambiar los valores de dos variables, indepentiente de si son ints, floats o algun otro tipo de dato\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#include\ <iostream>}
+\DoxyCodeLine{}
+\DoxyCodeLine{//\ Definición\ de\ la\ función\ de\ intercambio\ utilizando\ un\ template}
+\DoxyCodeLine{template\ <typename\ T>\ //nomenclatura\ de\ template}
+\DoxyCodeLine{void\ intercambiar(T\ \&a,\ T\ \&b)\ \{\ //funcion}
+\DoxyCodeLine{\ \ \ \ T\ temp\ =\ a;}
+\DoxyCodeLine{\ \ \ \ a\ =\ b;}
+\DoxyCodeLine{\ \ \ \ b\ =\ temp;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{int\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ //\ Ejemplo\ con\ enteros}
+\DoxyCodeLine{\ \ \ \ int\ num1\ =\ 5,\ num2\ =\ 10;}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ "{}Antes\ del\ intercambio:\ num1\ =\ "{}\ <<\ num1\ <<\ "{},\ num2\ =\ "{}\ <<\ num2\ <<\ std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ intercambiar(num1,\ num2);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ "{}Después\ del\ intercambio:\ num1\ =\ "{}\ <<\ num1\ <<\ "{},\ num2\ =\ "{}\ <<\ num2\ <<\ std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ //\ Ejemplo\ con\ doubles}
+\DoxyCodeLine{\ \ \ \ double\ dbl1\ =\ 3.14,\ dbl2\ =\ 2.71;}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ "{}Antes\ del\ intercambio:\ dbl1\ =\ "{}\ <<\ dbl1\ <<\ "{},\ dbl2\ =\ "{}\ <<\ dbl2\ <<\ std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ intercambiar(dbl1,\ dbl2);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ "{}Después\ del\ intercambio:\ dbl1\ =\ "{}\ <<\ dbl1\ <<\ "{},\ dbl2\ =\ "{}\ <<\ dbl2\ <<\ std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{\texorpdfstring{{\itshape {\bfseries{2. Sobrecarga de Plantillas\+:}}} ¿\+Como se realiza la sobrecarga de funciones con plantillas en C++?}{{\itshape {\bfseries{2. Sobrecarga de Plantillas\+:}}} ¿\+Como se realiza la sobrecarga de funciones con plantillas en C++?}}\label{md__r_e_a_d_m_e_autotoc_md4}
+Cuando se habla de sobrecagra de plantillas, se refiere a la capacidad de definir varais versiones de una misma plantilla, para asi manejar distintos tipos de parametros y con cantidades diferentes. Esto permite adaptar la funcionalidad de la plantilla. Se realiza\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#include\ <iostream>}
+\DoxyCodeLine{}
+\DoxyCodeLine{//\ Plantilla\ para\ imprimir\ un\ solo\ valor}
+\DoxyCodeLine{template\ <typename\ T>}
+\DoxyCodeLine{void\ imprimir(T\ valor)\ \{}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ "{}Valor:\ "{}\ <<\ valor\ <<\ std::endl;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{//\ Sobrecarga\ de\ la\ plantilla\ para\ imprimir\ dos\ valores}
+\DoxyCodeLine{template\ <typename\ T,\ typename\ U>}
+\DoxyCodeLine{void\ imprimir(T\ valor1,\ U\ valor2)\ \{}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ "{}Valor\ 1:\ "{}\ <<\ valor1\ <<\ "{},\ Valor\ 2:\ "{}\ <<\ valor2\ <<\ std::endl;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{int\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ //\ Ejemplos\ de\ uso\ de\ las\ funciones\ sobrecargadas}
+\DoxyCodeLine{\ \ \ \ imprimir(42);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ Utiliza\ la\ primera\ versión\ de\ la\ plantilla}
+\DoxyCodeLine{\ \ \ \ imprimir(3.14,\ "{}Hola"{});\ \ \ \ \ \ \ \ \ \ //\ Utiliza\ la\ segunda\ versión\ de\ la\ plantilla}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{\texorpdfstring{{\itshape {\bfseries{3. Plantillas de Clases\+:}}} Explique como se pueden utilizar plantillas en la definicion de clases en C++.}{{\itshape {\bfseries{3. Plantillas de Clases\+:}}} Explique como se pueden utilizar plantillas en la definicion de clases en C++.}}\label{md__r_e_a_d_m_e_autotoc_md5}
+Se puede usar para asi crear clases que puedan trabajar con distintos tipos de datos, sin tener que duplicar el codigo. Es particularmente util cuando se deben crear estructuras de datos flexibles con respecto al tipo de dato que se maneja. Un ejemplo de esto\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#include\ <iostream>}
+\DoxyCodeLine{}
+\DoxyCodeLine{//\ Definiendo\ la\ plantilla}
+\DoxyCodeLine{template\ <typename\ T>}
+\DoxyCodeLine{class\ MiContenedor\ \{}
+\DoxyCodeLine{private:}
+\DoxyCodeLine{\ \ \ \ T\ dato;}
+\DoxyCodeLine{}
+\DoxyCodeLine{public:}
+\DoxyCodeLine{\ \ \ \ //\ Constructor\ que\ toma\ un\ valor\ inicial}
+\DoxyCodeLine{\ \ \ \ MiContenedor(T\ valorInicial)\ :\ dato(valorInicial)\ \{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ //\ Función\ para\ obtener\ el\ dato\ almacenado}
+\DoxyCodeLine{\ \ \ \ T\ obtenerDato()\ const\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ return\ dato;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ //\ Función\ para\ establecer\ un\ nuevo\ dato}
+\DoxyCodeLine{\ \ \ \ void\ establecerDato(T\ nuevoDato)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ dato\ =\ nuevoDato;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{int\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ //\ Uso\ de\ la\ plantilla\ de\ clase\ con\ un\ tipo\ de\ dato\ específico\ (int)}
+\DoxyCodeLine{\ \ \ \ MiContenedor<int>\ contenedorEntero(42);}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ "{}Dato\ almacenado\ en\ el\ contenedor\ de\ enteros:\ "{}\ <<\ contenedorEntero.obtenerDato()\ <<\ std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ //\ Uso\ de\ la\ plantilla\ de\ clase\ con\ otro\ tipo\ de\ dato\ (double)}
+\DoxyCodeLine{\ \ \ \ MiContenedor<double>\ contenedorDouble(3.14);}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ "{}Dato\ almacenado\ en\ el\ contenedor\ de\ doubles:\ "{}\ <<\ contenedorDouble.obtenerDato()\ <<\ std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysection{\texorpdfstring{Excepciones\+:}{Excepciones\+:}}\label{md__r_e_a_d_m_e_autotoc_md6}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsection{\texorpdfstring{{\itshape {\bfseries{4. Manejo de Excepciones\+:}}} Describa los bloques {\bfseries{try}}, {\bfseries{catch}} y {\bfseries{throw}} y como se utilizan para el manejo de excepciones en C++.}{{\itshape {\bfseries{4. Manejo de Excepciones\+:}}} Describa los bloques {\bfseries{try}}, {\bfseries{catch}} y {\bfseries{throw}} y como se utilizan para el manejo de excepciones en C++.}}\label{md__r_e_a_d_m_e_autotoc_md7}
+El bloque {\bfseries{try}} se utiliza para envolver el codigo que puede lanzar una excepcion, dentro de este bloque, se mete el codigo que se debe ejecutar y se espera que sucedan excepciones. Si se produce una excepcion dentro del {\bfseries{try}}, se pasa al bloque {\bfseries{catch.}}
+
+El bloque {\bfseries{catch}} recibe las excepciones que envia {\bfseries{try}}, pueden haber varios {\bfseries{catch}}, y cada uno puede tener un tipo de excepcion asociado que captura y maneja.
+
+El bloque {\bfseries{throw}} se utiliza para lanzar una excepcion desde cualquier parte del codigo, se puede lanzar un objeto de cualquier tipo, pero el blqoue {\bfseries{catch}} debe corresponder al tipo de dato para poder atraparlo.\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsection{\texorpdfstring{{\itshape {\bfseries{5. Excepciones Estandar\+:}}} Nombre al menos tres excepciones estandar proporcionadas por C++ y proporciona ejemplos de situaciones en las que podrıan ser utiles.}{{\itshape {\bfseries{5. Excepciones Estandar\+:}}} Nombre al menos tres excepciones estandar proporcionadas por C++ y proporciona ejemplos de situaciones en las que podrıan ser utiles.}}\label{md__r_e_a_d_m_e_autotoc_md8}
+
+\begin{DoxyItemize}
+\item {\bfseries{std\+::runtime\+\_\+error}}
+\begin{DoxyItemize}
+\item Se utiliza para erroes que ocurren durante la ejecucion del programa y no se pueden preveer. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#include\ <stdexcept>\ //incluyendo\ para\ poder\ invocar\ las\ excepciones}
+\DoxyCodeLine{\#include\ <iostream>}
+\DoxyCodeLine{}
+\DoxyCodeLine{void\ realizarOperacion(int\ valor)\ \{\ //funcion\ para\ realizar\ la\ operacion}
+\DoxyCodeLine{\ \ \ \ if\ (valor\ <\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ throw\ std::runtime\_error("{}Error:\ No\ se\ puede\ realizar\ la\ operación\ con\ un\ valor\ negativo"{});//uso\ de\ la\ excepcion\ }
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ //\ Realizar\ la\ operación}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{int\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ try\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ realizarOperacion(-\/5);}
+\DoxyCodeLine{\ \ \ \ \}\ catch\ (const\ std::runtime\_error\&\ e)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cerr\ <<\ "{}Excepción\ capturada:\ "{}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+\item {\bfseries{std\+::invalid\+\_\+argument\+:}}
+\begin{DoxyItemize}
+\item Idealmente, se utiliza cuando una funcion recibe un argumento que no es valido en el contexto de la funcion. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#include\ <stdexcept>}
+\DoxyCodeLine{\#include\ <iostream>}
+\DoxyCodeLine{}
+\DoxyCodeLine{void\ dividir(int\ numerador,\ int\ denominador)\ \{}
+\DoxyCodeLine{\ \ \ \ if\ (denominador\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ throw\ std::invalid\_argument("{}Error:\ Denominador\ no\ puede\ ser\ cero"{});\ //Es\ protege\ la\ funcion\ que\ busca\ dividir,\ mediante\ una\ excepcion\ si\ el\ numero}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ ingresado\ es\ 0.}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ //\ Realizar\ la\ división}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{int\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ try\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ dividir(10,\ 0);}
+\DoxyCodeLine{\ \ \ \ \}\ catch\ (const\ std::invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cerr\ <<\ "{}Excepción\ capturada:\ "{}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+\item {\bfseries{std\+::out\+\_\+of\+\_\+range\+:}}
+\begin{DoxyItemize}
+\item Se utiliza cuando se intenta acceder a un índice o realizar una operación fuera del rango válido.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#include\ <stdexcept>}
+\DoxyCodeLine{\#include\ <vector>}
+\DoxyCodeLine{\#include\ <iostream>}
+\DoxyCodeLine{}
+\DoxyCodeLine{int\ obtenerElementoEnIndice(const\ std::vector<int>\&\ vec,\ std::size\_t\ indice)\ \{}
+\DoxyCodeLine{\ \ \ \ if\ (indice\ >=\ vec.size())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ throw\ std::out\_of\_range("{}Error:\ Índice\ fuera\ del\ rango\ del\ vector"{});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ return\ vec[indice];}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{int\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ std::vector<int>\ numeros\ =\ \{1,\ 2,\ 3,\ 4,\ 5\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ try\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ int\ valor\ =\ obtenerElementoEnIndice(numeros,\ 10);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cout\ <<\ "{}Valor\ obtenido:\ "{}\ <<\ valor\ <<\ std::endl;}
+\DoxyCodeLine{\ \ \ \ \}\ catch\ (const\ std::out\_of\_range\&\ e)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cerr\ <<\ "{}Excepción\ capturada:\ "{}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsection{\texorpdfstring{{\itshape {\bfseries{6. Politica de Manejo de Excepciones\+:}}} ¿\+Que es una polıtica de manejo de excepciones y por que es importante considerarla al disenar software?}{{\itshape {\bfseries{6. Politica de Manejo de Excepciones\+:}}} ¿\+Que es una polıtica de manejo de excepciones y por que es importante considerarla al disenar software?}}\label{md__r_e_a_d_m_e_autotoc_md9}
+Una politica de manejo de excepciones se refiere a las decisiones y enfoques que se piensan y toman por un desarrollador en lo que refiere a manejar las excepciones de un programa. Abarca decisiones sobre dónde y cómo se deben lanzar, capturar, y manejar excepciones en el código. Es importante considerar una política de manejo de excepciones al diseñar software cuando se quiere que el codigo sea mas robusto, claro y facil de mantener. Por otro lado, tambien contribuye a la seguridad del codigo al permitirle al codigo que haqga \textquotesingle{}cierres controlados\textquotesingle{}, en caso de que algo salga mal.\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysubsection{\texorpdfstring{{\itshape {\bfseries{7. Noexcept\+:}}} Explica el proposito de la palabra clave noexcept y como se utiliza en C++.}{{\itshape {\bfseries{7. Noexcept\+:}}} Explica el proposito de la palabra clave noexcept y como se utiliza en C++.}}\label{md__r_e_a_d_m_e_autotoc_md10}
+La palabra clave {\bfseries{noexcept}} se utiliza para indicar que una función no lanza excepciones. El propósito principal es optimizar el rendimiento y permitir que el compilador realice ciertas optimizaciones cuando se sabe que una función no generará excepciones. Un ejemplo de sus uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{void\ funcionSinExcepciones()\ noexcept\ \{}
+\DoxyCodeLine{\ \ \ \ //\ Código\ de\ la\ función\ que\ no\ lanza\ excepciones}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{void\ funcionConExcepciones()\ \{}
+\DoxyCodeLine{\ \ \ \ throw\ std::runtime\_error("{}¡Error!"{});\ //\ Esta\ función\ lanza\ excepciones}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{int\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ try\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ funcionSinExcepciones();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ funcionConExcepciones();\ //\ Esta\ línea\ lanzará\ una\ excepción}
+\DoxyCodeLine{\ \ \ \ \}\ catch\ (const\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ //\ Manejo\ de\ la\ excepción}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md11}{}\doxysection{\texorpdfstring{STL (Standard Template Library)\+:}{STL (Standard Template Library)\+:}}\label{md__r_e_a_d_m_e_autotoc_md11}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md12}{}\doxysubsection{\texorpdfstring{{\itshape {\bfseries{8. Contenedores STL\+:}}} Nombre cinco contenedores diferentes de la STL y explique brevemente en que situaciones serıa apropiado usar cada uno.}{{\itshape {\bfseries{8. Contenedores STL\+:}}} Nombre cinco contenedores diferentes de la STL y explique brevemente en que situaciones serıa apropiado usar cada uno.}}\label{md__r_e_a_d_m_e_autotoc_md12}
+Algunos contenedores proporcionados por STL incluyen\+:
+\begin{DoxyItemize}
+\item {\bfseries{std\+::vector}}, el cual almacena elementos en un arreglo contiguo en la memoria. Se utiliza cuando se necesita un contenedor de tamano dinamico que permite almacenar y manipular secuencias de elementos de manera eficiente.
+\item {\bfseries{std\+::list}}, que es una lista doblemente enlazada que permite la insercion y eliminacion eficiente de elementos en cualquier posicion. Se utiliza cuando es necesario realizar inserciones o eliminaciones frecuentes, como por ejemplo, a traves de iteradores.
+\item {\bfseries{std\+::map}}, el cual es un contenedor que almacena pares clave-\/valor, donde cada clave es unica y ordenada. Se utiliza cuando se busca realizar busquedas eficientes, basadas en clases, y tambien cuando se necesia una estructura de datos que asocie claves con valores.
+\item {\bfseries{std\+::unordered\+\_\+set\+:}}, el cual es un conjutno, no ordenado, que almacena elementos unicos sin orden particular. Se puede utilizar cuando se necesita verificar de manera rapida la existencia de un elemento en el conjunto, o cuando el orden de los elementos no es importante.
+\item {\bfseries{std\+::queue\+:}}, el cual es una cola FIFO (First In, First Out) que permite inserciones al final y eliminaciones al frente. Entonces, se puede utilizar cuando se necestia seguir el principio FIFO.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md13}{}\doxysubsection{\texorpdfstring{{\itshape {\bfseries{9. Iteradores en STL\+:}}} Explique el concepto de iteradores en la STL y como se utilizan para acceder a elementos en contenedores.}{{\itshape {\bfseries{9. Iteradores en STL\+:}}} Explique el concepto de iteradores en la STL y como se utilizan para acceder a elementos en contenedores.}}\label{md__r_e_a_d_m_e_autotoc_md13}
+Los iteradores son objetos que proporcionan una forma de recorrer secuencias de elementos en contenedores, actúan como punteros que apuntan a elementos en un contenedor y permiten acceder y manipular esos elementos. Los iteradores mas comunes son\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Iterador begin y end\+:}}
+\begin{DoxyItemize}
+\item {\itshape begin(container)} devuelve el iterador al primer elemento del contenedor.
+\item {\itshape end(container)} envia al iterador al final del rango. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#include\ <vector>}
+\DoxyCodeLine{}
+\DoxyCodeLine{std::vector<int>\ numeros\ =\ \{1,\ 2,\ 3,\ 4,\ 5\};}
+\DoxyCodeLine{auto\ itInicio\ =\ numeros.begin();\ \ //\ Iterador\ al\ primer\ elemento}
+\DoxyCodeLine{auto\ itFin\ =\ numeros.end();\ \ \ \ \ \ \ //\ Iterador\ al\ final\ (fuera\ del\ contenedor)}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+\item {\bfseries{Iterador de avance (++)\+:}}
+\begin{DoxyItemize}
+\item Le indica al iterador a avanzar al siguiente elemento de la secuencia. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{++itInicio;\ \ //\ Avanza\ al\ siguiente\ elemento}
+
+\end{DoxyCode}
+ ~\newline
+
+\end{DoxyItemize}
+\item {\bfseries{Operador de Desreferencia (\texorpdfstring{$\ast$}{*})\+:}}
+\begin{DoxyItemize}
+\item Permite acceder al valor al que apunta el iterador. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{int\ primerElemento\ =\ *itInicio;\ \ //\ Accede\ al\ valor\ del\ primer\ elemento}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+\item {\bfseries{Iterador de Retroceso ( -- )\+:}}
+\begin{DoxyItemize}
+\item Permite al iterador retrocedes al elemento anterior en la secuencia. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{-\/-\/itFin;\ \ //\ Retrocede\ al\ elemento\ anterior}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md14}{}\doxysubsection{\texorpdfstring{{\itshape {\bfseries{10. Algoritmos STL\+:}}} Proporcione ejemplos de al menos tres algoritmos de la STL y describa sus funciones basicas.}{{\itshape {\bfseries{10. Algoritmos STL\+:}}} Proporcione ejemplos de al menos tres algoritmos de la STL y describa sus funciones basicas.}}\label{md__r_e_a_d_m_e_autotoc_md14}
+
+\begin{DoxyItemize}
+\item {\bfseries{std\+::sort\+:}}
+\begin{DoxyItemize}
+\item Ordena los elementos de un rango específico en orden ascendente o descendente, de acuerdo a las necesidades del programa.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#include\ <algorithm>}
+\DoxyCodeLine{\#include\ <vector>}
+\DoxyCodeLine{}
+\DoxyCodeLine{int\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ std::vector<int>\ numeros\ =\ \{5,\ 2,\ 8,\ 1,\ 3\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ //\ Ordena\ el\ vector\ en\ orden\ ascendente}
+\DoxyCodeLine{\ \ \ \ std::sort(numeros.begin(),\ numeros.end());}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ //\ Ahora\ 'numeros'\ contiene:\ \{1,\ 2,\ 3,\ 5,\ 8\}}
+\DoxyCodeLine{\ \ \ \ return\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\begin{DoxyItemize}
+\item {\bfseries{std\+::find\+:}}
+\begin{DoxyItemize}
+\item Ordena l\+Busca la primera ocurrencia de un valor específico en un rango y devuelve un iterador al elemento encontrado
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#include\ <algorithm>}
+\DoxyCodeLine{\#include\ <vector>}
+\DoxyCodeLine{}
+\DoxyCodeLine{int\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ std::vector<int>\ numeros\ =\ \{1,\ 2,\ 3,\ 4,\ 5\};}
+\DoxyCodeLine{\ \ \ \ int\ valorBuscado\ =\ 3;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ auto\ it\ =\ std::find(numeros.begin(),\ numeros.end(),\ valorBuscado);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ if\ (it\ !=\ numeros.end())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ //\ Se\ encontró\ el\ valor}
+\DoxyCodeLine{\ \ \ \ \}\ else\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ //\ El\ valor\ no\ fue\ encontrado}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item {\bfseries{std\+::accumulate\+:}}
+\begin{DoxyItemize}
+\item Calcula la suma (u otra operación binaria) de todos los elementos en un rango.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#include\ <numeric>}
+\DoxyCodeLine{\#include\ <vector>}
+\DoxyCodeLine{}
+\DoxyCodeLine{int\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ std::vector<int>\ numeros\ =\ \{1,\ 2,\ 3,\ 4,\ 5\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ //\ Calcula\ la\ suma\ de\ los\ elementos\ en\ el\ vector}
+\DoxyCodeLine{\ \ \ \ int\ suma\ =\ std::accumulate(numeros.begin(),\ numeros.end(),\ 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ //\ Ahora\ 'suma'\ contiene\ la\ suma\ de\ los\ elementos:\ 15}
+\DoxyCodeLine{\ \ \ \ return\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md15}{}\doxysubsection{\texorpdfstring{{\itshape {\bfseries{11. Algoritmos Personalizados\+:}}} ¿\+Como podria utilizar un algoritmo personalizado con la STL?}{{\itshape {\bfseries{11. Algoritmos Personalizados\+:}}} ¿\+Como podria utilizar un algoritmo personalizado con la STL?}}\label{md__r_e_a_d_m_e_autotoc_md15}
+La STL tambien proporciona una interfaz flexible que te permite aplicar funciones personalizadas a los elementos de un contenedor.\+Primeramente, se debe definir la funcion y lo que se quiere que esta haga. Esta funcion puede ser una funcion regular, un objeto o una expresion lambda. Luego, se pueden utilizar algoritmos como {\bfseries{std\+::transform}} o {\bfseries{std\+::for\+\_\+each}}\hypertarget{md__r_e_a_d_m_e_autotoc_md16}{}\doxysection{\texorpdfstring{Expresiones Regulares\+:}{Expresiones Regulares\+:}}\label{md__r_e_a_d_m_e_autotoc_md16}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md17}{}\doxysubsection{\texorpdfstring{{\itshape {\bfseries{12. Definicion de Expresiones Regulares\+:}}}. ¿\+Defina que son las expresiones regulares y proporcione un ejemplo simple.}{{\itshape {\bfseries{12. Definicion de Expresiones Regulares\+:}}}. ¿\+Defina que son las expresiones regulares y proporcione un ejemplo simple.}}\label{md__r_e_a_d_m_e_autotoc_md17}
+Las expresiones regulares son patrones de búsqueda y manipulación de cadenas de texto, ya que se describen conjuntos de cadenas de caracteres y se utilizan para buscar, comparar y manipular texto de manera eficiente.\+Se construyen mediante una combinación de caracteres literales y caracteres especiales que representan ciertos patrones o clases de caracteres. Un ejemplo seria\+:
+
+
+\begin{DoxyItemize}
+\item \texorpdfstring{$^\wedge$}{\string^}\mbox{[}A-\/\+Za-\/z\mbox{]}+\$ 
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md18}{}\doxysubsection{\texorpdfstring{{\itshape {\bfseries{13. Caracteres Especiales\+:}}} Enumere al menos tres caracteres especiales comunmente utilizados en expresiones regulares y describa sus funciones.}{{\itshape {\bfseries{13. Caracteres Especiales\+:}}} Enumere al menos tres caracteres especiales comunmente utilizados en expresiones regulares y describa sus funciones.}}\label{md__r_e_a_d_m_e_autotoc_md18}
+Siguiendo el ejemplo anterior\+:
+
+
+\begin{DoxyItemize}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$^\wedge$}{\string^}\+:\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Indica el inicio de la cadena.
+\item {\bfseries{\mbox{[}A-\/\+Za-\/z\mbox{]}}}\+: Representa \textquotesingle{}cualquier letra minuscula o mayuscula\textquotesingle{}
+\item {\bfseries{+}}\+: Indica que debe haber al menos una letra
+\item {\bfseries{\$}}\+: Indica el final de la cadena
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md19}{}\doxysubsection{\texorpdfstring{{\itshape {\bfseries{14. Uso de Expresiones Regulares en C++\+:}}} ¿\+Como se utilizan las expresiones regulares en C++? Proporciona un ejemplo.}{{\itshape {\bfseries{14. Uso de Expresiones Regulares en C++\+:}}} ¿\+Como se utilizan las expresiones regulares en C++? Proporciona un ejemplo.}}\label{md__r_e_a_d_m_e_autotoc_md19}
+Se pueden utilizar expresiones regulares mediante la biblioteca estándar regex. La STL proporciona una interfaz para trabajar con expresiones regulares a través de las clases {\bfseries{std\+::regex}} y {\bfseries{std\+::regex\+\_\+match}}. A nivel de codigo\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#include\ <iostream>}
+\DoxyCodeLine{\#include\ <regex>}
+\DoxyCodeLine{}
+\DoxyCodeLine{int\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ //\ Expresión\ regular\ para\ buscar\ números\ enteros\ en\ una\ cadena}
+\DoxyCodeLine{\ \ \ \ std::regex\ patron("{}[0-\/9]+"{});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ //\ Cadena\ de\ texto\ a\ analizar}
+\DoxyCodeLine{\ \ \ \ std::string\ texto\ =\ "{}La\ edad\ de\ Juan\ es\ 25\ y\ la\ de\ Maria\ es\ 30."{};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ //\ Objeto\ de\ coincidencia}
+\DoxyCodeLine{\ \ \ \ std::smatch\ coincidencia;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ //\ Buscar\ coincidencias\ en\ la\ cadena\ usando\ la\ expresión\ regular}
+\DoxyCodeLine{\ \ \ \ if\ (std::regex\_search(texto,\ coincidencia,\ patron))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cout\ <<\ "{}Coincidencia\ encontrada:\ "{}\ <<\ coincidencia[0]\ <<\ std::endl;}
+\DoxyCodeLine{\ \ \ \ \}\ else\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cout\ <<\ "{}No\ se\ encontraron\ coincidencias."{}\ <<\ std::endl;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md20}{}\doxysubsection{\texorpdfstring{{\itshape {\bfseries{15. Validacion de Patrones\+:}}} ¿\+Por que las expresiones regulares son utiles para la validacion de patrones en cadenas de texto?}{{\itshape {\bfseries{15. Validacion de Patrones\+:}}} ¿\+Por que las expresiones regulares son utiles para la validacion de patrones en cadenas de texto?}}\label{md__r_e_a_d_m_e_autotoc_md20}
+Son útiles para la validación de patrones en cadenas de texto por que permiten mas flexibilidad y generalidad. Por otro lado, permite el manejo de busqueda y extraccion de informacion, aumentando asi la eficiencia y el rendimiento. Ademas, la versatilidad en la definicion de reglas permite definir y anazliar patrones mas complejos. Las expresiones regulares tambien son herramientas estandarizadas, que mantienen la consistencia y los estandares definidos por la industria, ademas de facilitar la mantenibilidad del codigo. 
