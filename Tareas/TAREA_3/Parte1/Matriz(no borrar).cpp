@@ -8,7 +8,7 @@
 
 template <typename T>
 class Matriz2D;
-
+//template para generar una matriz con numeros enteros
 template <>
 class Matriz2D<int> {
 private:
@@ -64,7 +64,7 @@ public:
         }
     }
 };
-
+//template para generar una matriz con numeros flotantes
 template <>
 class Matriz2D<float> {
 private:
@@ -94,28 +94,29 @@ public:
         }
     }
 
-    void ingresarDatos() {
-        std::cout << "Ingrese los datos para la matriz de flotantes:\n";
-        for (int i = 0; i < filas; ++i) {
-            for (int j = 0; j < columnas; ++j) {
-                float valor;
+void ingresarDatos() {
+    std::cout << "Ingrese los datos para la matriz de flotantes:\n";
+    for (int i = 0; i < filas; ++i) {
+        for (int j = 0; j < columnas; ++j) {
+            float valor;
+            std::cout << "Fila " << i + 1 << ", Columna " << j + 1 << ": ";
+            std::cin >> valor;
+
+            // Verificar si el valor ingresado es un número entero
+            while (std::cin.fail() || std::cin.peek() != '\n') {
+                std::cerr << "Error: Debe ingresar un número flotante." << std::endl;
+                // Limpiar el buffer de entrada en caso de error
+                std::cin.clear();
+                while (std::cin.get() != '\n');
                 std::cout << "Fila " << i + 1 << ", Columna " << j + 1 << ": ";
                 std::cin >> valor;
-
-                // Verificar si el valor ingresado es un número de punto flotante
-                if (std::cin.fail() || std::cin.peek() != '\n') {
-                    std::cerr << "Error: Debe ingresar un número de punto flotante." << std::endl;
-                    // Limpiar el buffer de entrada en caso de error
-                    std::cin.clear();
-                    while (std::cin.get() != '\n');
-                    --j;  // Decrementar j para reintentar la entrada del mismo elemento.
-                    continue;
-                }
-
-                establecerValor(i, j, valor);
             }
+
+            establecerValor(i, j, valor);
         }
     }
+}
+
 };
 
 template <>
@@ -199,16 +200,17 @@ public:
     }
 
     // Métodos de operaciones
-    static Matriz2D<T> suma(const Matriz2D<T>& matriz1, const Matriz2D<T>& matriz2) {
-        Matriz2D<T> resultado(matriz1.obtenerFilas(), matriz1.obtenerColumnas());
-        for (int i = 0; i < matriz1.obtenerFilas(); ++i) {
-            for (int j = 0; j < matriz1.obtenerColumnas(); ++j) {
-                T valor = matriz1.obtenerValor(i, j) + matriz2.obtenerValor(i, j);
-                resultado.establecerValor(i, j, valor);
-            }
+   static Matriz2D<T> suma(const Matriz2D<T>& matriz1, const Matriz2D<T>& matriz2) {
+    Matriz2D<T> resultado(matriz1.obtenerFilas(), matriz1.obtenerColumnas());
+    for (int i = 0; i < matriz1.obtenerFilas(); ++i) {
+        for (int j = 0; j < matriz1.obtenerColumnas(); ++j) {
+            T valor = matriz1.obtenerValor(i, j) + matriz2.obtenerValor(i, j);
+            resultado.establecerValor(i, j, valor);
         }
-        return resultado;
     }
+    return resultado;
+}
+
 
     static Matriz2D<T> resta(const Matriz2D<T>& matriz1, const Matriz2D<T>& matriz2) {
         Matriz2D<T> resultado(matriz1.obtenerFilas(), matriz1.obtenerColumnas());
@@ -280,6 +282,9 @@ int main() {
     std::cout << "Ingrese el número de columnas de las matrices: ";
     std::cin >> columnas;
 
+//Matriz 1
+
+
     Matriz2D<int> matrizEnteros1(filas, columnas);
     Matriz2D<int> matrizEnteros2(filas, columnas);
     Matriz2D<float> matrizFlotantes1(filas, columnas);
@@ -329,13 +334,49 @@ int main() {
 
     // Crear la Matriz 2
     switch (opcionMatriz2) {
-        case 1: {
-            Matriz2D<int> matrizEnteros2(filasMatriz2, columnasMatriz2);
-            matrizEnteros2.ingresarDatos();
-            std::cout << "\nMatriz de enteros 2:\n";
+    case 1: {
+        Matriz2D<int> matrizEnteros2(filasMatriz2, columnasMatriz2);
+        matrizEnteros2.ingresarDatos();
+        std::cout << "\nMatriz de enteros 2:\n";
+        matrizEnteros2.mostrarMatriz();
+
+        // Realizar operaciones con matrices
+        try {
+            std::cout << "\nMatriz 1 antes de la suma:\n";
+            matrizEnteros1.mostrarMatriz();
+            std::cout << "\nMatriz 2 antes de la suma:\n";
             matrizEnteros2.mostrarMatriz();
-            break;
+            char operacion = pedirOperacion();
+            switch (operacion) {
+                case '+': {
+                    Matriz2D<int> resultadoSuma = matrizEnteros1 + matrizEnteros2;
+                    std::cout << "\nResultado de la suma:\n";
+                    resultadoSuma.mostrarMatriz();
+                    break;
+                }
+                case '-': {
+                    Matriz2D<int> resultadoResta = matrizEnteros1 - matrizEnteros2;
+                    std::cout << "\nResultado de la resta:\n";
+                    resultadoResta.mostrarMatriz();
+                    break;
+                }
+                case '*': {
+                    Matriz2D<int> resultadoMultiplicacion = matrizEnteros1 * matrizEnteros2;
+                    std::cout << "\nResultado de la multiplicación:\n";
+                    resultadoMultiplicacion.mostrarMatriz();
+                    break;
+                }
+                default:
+                    std::cerr << "Operación no reconocida." << std::endl;
+                    break;
+            }
+        } catch (const std::invalid_argument& e) {
+            std::cerr << "Error: " << e.what() << std::endl;
         }
+
+        break;
+    }
+
         case 2: {
             Matriz2D<float> matrizFlotantes2(filasMatriz2, columnasMatriz2);
             matrizFlotantes2.ingresarDatos();
@@ -350,40 +391,11 @@ int main() {
             matrizComplejos2.mostrarMatriz();
             break;
         }
-        default:
-            std::cerr << "Opción no válida. Por favor, seleccione una opción válida." << std::endl;
-            return 1;
-    }
-    // Realizar operaciones con matrices
-    try {
-        char operacion = pedirOperacion();
-        switch (operacion) {
-            case '+': {
-                Matriz2D<int> resultadoSuma = matrizEnteros1 + matrizEnteros2;
-                std::cout << "\nResultado de la suma:\n";
-                resultadoSuma.mostrarMatriz();
-                break;
-            }
-            case '-': {
-                Matriz2D<int> resultadoResta = matrizEnteros1 - matrizEnteros2;
-                std::cout << "\nResultado de la resta:\n";
-                resultadoResta.mostrarMatriz();
-                break;
-            }
-            case '*': {
-                Matriz2D<int> resultadoMultiplicacion = matrizEnteros1 * matrizEnteros2;
-                std::cout << "\nResultado de la multiplicación:\n";
-                resultadoMultiplicacion.mostrarMatriz();
-                break;
-            }
             default:
-                std::cerr << "Operación no reconocida." << std::endl;
-                break;
+                std::cerr << "Opción no válida. Por favor, seleccione una opción válida." << std::endl;
+                return 1;
         }
-    } catch (const std::invalid_argument& e) {
-        std::cerr << "Error: " << e.what() << std::endl;
-    }
-
-
+    // Realizar operaciones con matrices
+       
     return 0;
 }
