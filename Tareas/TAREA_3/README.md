@@ -3,8 +3,9 @@
 Se deben ejecutar los siguientes comandos:
 - **make o make all:** para compilar el codigo.
 - **make clean:** para borrar archivos objeto y borrar todos los ejecutables, recomendado hacer siempre una vez que ya se empezo a probar el programa.
-- **/.mainMatrices.exe:** para ejecutar el programa que corresponde a la parte 1, sobre matrices.
-- **/.mainCorreo.exe:** para ejecutar el programa que corresponde a la parte 2, sobre correos.
+- **./mainMatrices.exe:** para ejecutar el programa que corresponde a la parte 1, sobre matrices.
+- **./mainCorreo.exe:** para ejecutar el programa que corresponde a la parte 2, sobre correos.
+
 
 ## Templates:
 ### ***1. Definicion de Templates:*** Explique el concepto de templates en C++ y proporcione un ejemplo simple.
