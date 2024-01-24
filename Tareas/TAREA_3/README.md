@@ -6,7 +6,7 @@ Se deben ejecutar los siguientes comandos:
 - **./mainMatrices.exe:** para ejecutar el programa que corresponde a la parte 1, sobre matrices.
 - **./mainCorreo.exe:** para ejecutar el programa que corresponde a la parte 2, sobre correos.
 
-
+**Nota**: No se pudo subir a netlify :(. Pero lo bueno es que si corrio la documentacion doxygen, por eso se ven los archivos **html** y **latex.** Toda la tarea esta en el src.
 ## Templates:
 ### ***1. Definicion de Templates:*** Explique el concepto de templates en C++ y proporcione un ejemplo simple.
 Un "template", se refiere a una funcionalidad del lenguaje que permite la creacion de codigo generico y reutilizable. Es una "plantilla", que se puede usar para crear funciones, clases o estructuras de datos que pueden trabajar con varios tipos de datos, sin tener que especificarlos de antemano. El codigo siguiente, va a crear una funcion que va a intercambiar los valores de dos variables, indepentiente de si son ints, floats o algun otro tipo de dato:
