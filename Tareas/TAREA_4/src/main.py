@@ -2,15 +2,17 @@ import timeit
 import cProfile
 from alergia import Alergia
 from evaluacion import EvaluacionEspecifica
-from tiposalergias import TiposDeAlergias
 from evaluacion_general import EvaluacionGeneral
 
 def main():
+    # Inicio de la medición de tiempo
+    start_time = timeit.default_timer()
+
     # Interfaz de usuario
     while True:
         print("\nMenú:")
         print("1. Ingresar su puntuación de alergia, para ver a cuales es alérgico.")
-        print("2. Ingresar tipos de alergias, para ver cuál es su puntuación de alergia.")
+        print("2. Ingresar tipos de alergias, a la lista ya existente.")
         print("3. Mostrar resultados de la opción 1")
         print("4. Construir su propia lista")
         print("5. Salir")
@@ -19,23 +21,27 @@ def main():
 
         if opcion == '1':
             try:
-                print("La lista disponible es de :")
+                # Mostrar lista de alergias disponible
+                print("La lista disponible es de:")
                 for alergia in Alergia.alergias_registradas:
                     print(f"{alergia.nombre}: {alergia.valor}")
+
+                # Ingresar puntuación de alergia
                 puntuacion = int(input("Ingrese la puntuación de alergia: "))
             except ValueError:
                 print("Por favor, ingrese un valor numérico válido.")
         
         elif opcion == '2':
             while True:
+                # Mostrar lista de alergias disponible
                 print("La lista disponible es de:")
                 for alergia in Alergia.alergias_registradas:
                     print(f"{alergia.nombre}: {alergia.valor}")
 
+                # Ingresar alergia y valor personalizados
                 alergia_usuario = input("Ingrese el nombre de su alergia (o '0' para salir): ")
                 if alergia_usuario == '0':
                     break
-                
                 try:
                     valor = int(input("Ingrese la puntuación de la alergia: "))
                     # Crea una instancia de Alergia y agrégala a alergias_registradas
@@ -59,13 +65,17 @@ def main():
             evaluacion_general.calcular_puntuacion_general()
             evaluacion_general.imprimir_resultados()
 
-
-
         elif opcion == '5':
             break
         else:
             print("Opción no válida. Por favor, seleccione una opción del 1 al 5.")
 
-if __name__ == "__main__":
-    tiempo_ejecucion_total = timeit.timeit("main()", setup="from __main__ import main", number=1)
+    # Fin de la medición de tiempo
+    end_time = timeit.default_timer()
+    tiempo_ejecucion_total = end_time - start_time
     print(f"Tiempo de ejecución total: {tiempo_ejecucion_total} segundos")
+
+if __name__ == "__main__":
+    main()
+     # Perfilar la función main() con cProfile
+cProfile.run("main()")

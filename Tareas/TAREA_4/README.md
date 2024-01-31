@@ -1,12 +1,53 @@
 # Tarea 4,IE-0207,Sebastián Bonilla Vega, C01263.
-##  INSTRUCCIONES PARA COMPILAR
+##  INSTRUCCIONES PARA EJECUTAR
 Se deben ejecutar los siguientes comandos:
-- **make o make all:** para compilar el codigo.
-- **make clean:** para borrar archivos objeto y borrar todos los ejecutables, recomendado hacer siempre una vez que ya se empezo a probar el programa.
-- **./mainMatrices.exe:** para ejecutar el programa que corresponde a la parte 1, sobre matrices.
-- **./mainCorreo.exe:** para ejecutar el programa que corresponde a la parte 2, sobre correos.
+- **make:** para ejecutar el codigo.
+- **make clean:** para borrar el directorio pycache, recomendado hacer siempre una vez que ya se empezo a probar el programa.
 
-**Nota**: No se pudo subir a netlify :(. Pero lo bueno es que si corrio la documentacion doxygen, por eso se ven los archivos **html** y **latex.** Toda la tarea esta en el src.
+**NOTA:** Es importante que, el ejecutar make, el codigo se va a correr 2 veces. Uno "normalmente", y otro para analizar el sistema mas a fondo gracias a **cprofile.** Sinceramente, ni idea como corregirlo. Era eso o no usar cprofile del todo, por lo que preferi seguir con esta implementacion.
+
+Explicando un poco la como funciona el codigo, se imprime un menu. Si se elige la opcion 1, se ingresa un numero aleatorio y el sistema va a guardarlo para usarlo posteriormente. Si se escoge 2, se pueden ingresar tipos de alergia con sus valores para adicionarlos a la lista. Si se escoge la opcion 3, se va a decir a que alimentos u objetos es alergico el usuario, incluyendo los que se pueden agregar en la opcion 2. Si se escoge la opcion 4, se es capaz de construir una lista completamente personalizada. 
+
+## PARTE 2
+Gracias al modulo **timeit**, se fue capaz de evaluar y analizar el paso del tiempo durante la ejecucion del programa realizando pruebas exhaustivas, lo que permitió obtener mediciones precisas sobre el rendimiento de la implementacion del codigo. Al ser un codigo donde hay un menu, y me manera directa se puede tomar la decision de salir sin haber elegido nada, se obtienen tiempos relativamente rapidos para nuestra percepcion. Por ejemplo, si ejecuto el codigo y escojo la ocpino 5 de la manera mas rapida que pueda, obtengo un tiempo de en un rango de **1** a **1.15** segundos. Para nosotros como personas es despreciable, pero para tiempos de computadora es considerablemente alto. Esto es debido a la teoria que hemos visto exhaustivamente en el codigo, ya que python es un lenguaje **interpretado**, el cual tiende a sacrificar la eficiencia y rapidez del codigo a cambio de ser mas intuitivo de programar y aprender y tambien dar mas  flexibilidad al programador. Aunque esto lo hace ideal para tareas de desarrollo rápido y prototipado, puede resultar menos eficiente en términos de rendimiento en comparación con lenguajes compilados como C++. La interpretación de código línea por línea y la gestión dinámica de tipos en Python pueden introducir cierta sobrecarga que impacta en el tiempo de ejecución, especialmente en operaciones que se muestren intensivas hacia el sistema.
+
+Por otro lado el modulo **cprofile** nos da un analisis mas detallado a la hora de profilar el codigo. Por ejemplo, en la terminal,despues de tener una ejecucion considerada "completa":
+
+```
+Tiempo de ejecución total: 45.5271646999754 segundos
+         356 function calls in 45.528 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000   45.528   45.528 <string>:1(<module>)
+        7    0.000    0.000    0.000    0.000 alergia.py:13(__init__)
+        2    0.000    0.000    0.000    0.000 evaluacion.py:16(__init__)
+        2    0.000    0.000    0.000    0.000 evaluacion.py:26(evaluar_alergias)
+       55    0.000    0.000    0.000    0.000 evaluacion.py:31(<lambda>)
+        2    0.000    0.000    0.005    0.002 evaluacion.py:41(imprimir_resultados)
+        1    0.000    0.000    0.000    0.000 evaluacion_general.py:12(calcular_puntuacion_general)
+        1    0.000    0.000    0.000    0.000 evaluacion_general.py:14(<listcomp>)
+        4    0.000    0.000    0.000    0.000 evaluacion_general.py:17(<genexpr>)
+        1    0.000    0.000    0.000    0.000 evaluacion_general.py:23(<listcomp>)
+        1    0.000    0.000    0.000    0.000 evaluacion_general.py:24(<listcomp>)
+        1    0.000    0.000   10.656   10.656 evaluacion_general.py:34(ingresar_valores_personalizados)
+        1    0.000    0.000    0.000    0.000 evaluacion_general.py:4(__init__)
+        1    0.000    0.000    0.004    0.004 evaluacion_general.py:62(imprimir_resultados)
+        1    0.001    0.001   45.528   45.528 main.py:7(main)
+        1    0.000    0.000   45.528   45.528 {built-in method builtins.exec}
+       19   45.481    2.394   45.481    2.394 {built-in method builtins.input}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+      202    0.045    0.000    0.045    0.000 {built-in method builtins.print}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.sorted}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.sum}
+        2    0.000    0.000    0.000    0.000 {built-in method time.perf_counter}
+       34    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        6    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+        6    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
+```
+De los datos, se puede ver que en el mismo tiempo de ejecucion se llamaron funciones 356, donde la mas llamada fue **evaluacion.py**. Esto tiene sentido, ya que en evaluacion.py es donde esta la clase **EvaluacionEspecifica**, donde se implementan las indicaciones dadas en el enunciado de la tarea, y a como esta estructurado es la funcion que mas veces se invoca para evaluar las alergias llamadas. Ademas, es interesante notar que se llamo la funcionalidad **202** veces, lo que significa que se imprimieron cosas 202 veces. Posiblemente una manera para optimizar y vovler el sistema mas eficiente seria disminuir la cantidad de prints que se realizan, ya que es la manera mas "directa" que viene a la mente. Se utilizo el metodo **append** unas 34 veces, lo cual va a aumentar o disminuir segun que tanto se agregen objetos en el codigo, ya sea para la lista personal, o para la lista que ya viene en el sistema. La funcion que mas tiempo y recursos consume es **input**.
 ### 1. Explique la diferencia entre una lista y una tupla en Python.
 Las listas y tuplas son estructuras de datos que se utilizan para almacenar colecciones de elementos. En las **listas**,  se puede modificar, agregar o eliminar elementos después de crear la lista, se definen con **' [ ] '** y en general cuando se necesita una coleccion de elementos que cambian a lo largo del tiempo. Por otro lado, las **tuplas** son inmutables, lo que significa que una vez que se crea una tupla, no se puede modificar, se definen como **' ( ) '** y se utilizan cuando hay una coleccion de elementos que no van a cambiar durante toda la ejecucion del programa.
 
