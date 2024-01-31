@@ -25,26 +25,27 @@ while True:
             puntuacion = int(input("Ingrese la puntuación de alergia: "))
         except ValueError:
             print("Por favor, ingrese un valor numérico válido.")
-
+    
     elif opcion == '2':
-        try:
-            print("La lista disponible es de :")
+        # Crear una instancia de TiposDeAlergias
+        tipos_de_alergias = TiposDeAlergias()
+
+        while True:
+            print("La lista disponible es de:")
             for alergia in Alergia.alergias_registradas:
                 print(f"{alergia.nombre}: {alergia.valor}")
-            alergia_usuario = input("Ingrese el nombre de su alergia: ")
-            valor = int(input("Ingrese la puntuación de la alergia: "))
+            
+            alergia_usuario = input("Ingrese el nombre de su alergia (o '0' para salir): ")
+            if alergia_usuario == '0':
+                break
+            
+            try:
+                valor = int(input("Ingrese la puntuación de la alergia: "))
+                # Modificar esta línea para pasar correctamente los argumentos
+                tipos_de_alergias.agregar_alergia(alergia_usuario, valor)
 
-            # Mostrar resultados directamente después de ingresar tipos de alergias
-            TiposDeAlergias().agregar_alergia(alergia_usuario, valor)
-
-            if alergia_usuario != '0':
-                print(f"Usted es alérgico a: {alergia_usuario}")
-                evaluacion_general = EvaluacionGeneral(alergia_usuario)
-                evaluacion_general.calcular_puntuacion_general()
-                evaluacion_general.imprimir_resultados()
-
-        except ValueError:
-            print("Por favor, ingrese un valor numérico válido.")
+            except ValueError:
+                print("Por favor, ingrese un valor numérico válido.")
 
     elif opcion == '3':
         if Alergia.alergias_registradas:  
