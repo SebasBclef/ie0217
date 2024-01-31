@@ -1,20 +1,26 @@
 from alergia import Alergia
+
 class EvaluacionEspecifica:
     def __init__(self, puntuacion):
         self.puntuacion = puntuacion
-        self.alergias_detectadas = []
+        self.alergias_evaluadas = []
 
     def evaluar_alergias(self):
-        for alergia in Alergia.alergias_registradas:
+        # Ordenar las alergias de mayor a menor valor
+        alergias_ordenadas = sorted(Alergia.alergias_registradas, key=lambda x: x.valor, reverse=True)
+
+        for alergia in alergias_ordenadas:
             if alergia.valor <= self.puntuacion:
-                self.alergias_detectadas.append(alergia)
+                self.alergias_evaluadas.append(alergia)
+                self.puntuacion -= alergia.valor
+
+            if self.puntuacion == 0:
+                break
 
     def imprimir_resultados(self):
-        if self.alergias_detectadas:
-            print("Alergias detectadas:")
-            for alergia in self.alergias_detectadas:
-                print(f"{alergia.nombre}: {alergia.valor}")
+        print("Alimentos a los que el usuario es alérgico:")
+        if self.alergias_evaluadas:
+            for alergia in self.alergias_evaluadas:
+                print(alergia.nombre, alergia.valor)
         else:
-            print("No se detectaron alergias para la puntuación proporcionada.")
-
-
+            print("No hay alergias registradas para la puntuación proporcionada.")
