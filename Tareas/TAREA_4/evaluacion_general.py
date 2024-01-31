@@ -8,9 +8,15 @@ class EvaluacionGeneral:
         self.puntuacion_general = 0
 
     def calcular_puntuacion_general(self):
+
+        # Filtrar las alergias que tienen tanto nombre como valor
+        alergias_con_nombre_y_valor = [(nombre, valor) for nombre, valor in self.alergias_usuario if nombre and valor is not None]
         # Implementar la lógica para calcular la puntuación general
         # En este ejemplo, simplemente suma todos los valores de las alergias
-        self.puntuacion_general = sum(alergia[1] for alergia in self.alergias_usuario if alergia[1] is not None)
+        self.puntuacion_general = sum(valor for _, valor in alergias_con_nombre_y_valor)
+        # Separar alergias sin nombre y nombres sin valor
+        valores_sin_nombre = [valor for nombre, valor in alergias_con_nombre_y_valor if not nombre]
+        nombres_sin_valor = [nombre for nombre, valor in alergias_con_nombre_y_valor if nombre and valor is None]
 
         # Identificar valores sin nombre y nombres sin valor
         for alergia in self.alergias_usuario:
