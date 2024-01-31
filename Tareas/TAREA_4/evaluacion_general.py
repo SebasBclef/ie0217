@@ -6,6 +6,7 @@ class EvaluacionGeneral:
         self.valores_sin_nombre = []
         self.nombres_sin_valor = []
         self.puntuacion_general = 0
+        self.contador_alergias_con_valor = 0
 
     def calcular_puntuacion_general(self):
 
@@ -14,6 +15,8 @@ class EvaluacionGeneral:
         # Implementar la lógica para calcular la puntuación general
         # En este ejemplo, simplemente suma todos los valores de las alergias
         self.puntuacion_general = sum(valor for _, valor in alergias_con_nombre_y_valor)
+         # Contar alergias con nombre y valor
+        self.contador_alergias_con_valor = len(alergias_con_nombre_y_valor)
         # Separar alergias sin nombre y nombres sin valor
         valores_sin_nombre = [valor for nombre, valor in alergias_con_nombre_y_valor if not nombre]
         nombres_sin_valor = [nombre for nombre, valor in alergias_con_nombre_y_valor if nombre and valor is None]
@@ -64,6 +67,7 @@ class EvaluacionGeneral:
                 print(f"{alergia[0]}: {alergia[1]}")
 
             print(f"\nPuntuación General: {self.puntuacion_general}")
+            print(f"\nPromedio: {self.puntuacion_general/self.contador_alergias_con_valor}")
 
             # Mostrar valores sin nombre
             if self.valores_sin_nombre:
