@@ -1,28 +1,76 @@
 from alergia import Alergia
 
 class EvaluacionGeneral:
-    @staticmethod
-    def calcular_puntuacion_general(alergias_evaluadas):
-        puntuacion_general = sum(alergia.valor for alergia in alergias_evaluadas)
-        return puntuacion_general
+    def __init__(self, alergias_usuario):
+        self.alergias_usuario = alergias_usuario
+        self.valores_sin_nombre = []
+        self.nombres_sin_valor = []
+        self.puntuacion_general = 0
 
-    @staticmethod
-    def imprimir_resultados(alergias_evaluadas):
-        alergias_sin_nombre = [alergia for alergia in alergias_evaluadas if alergia.nombre == ""]
-        alergias_sin_puntuacion = [alergia for alergia in alergias_evaluadas if alergia.valor == 0]
+    def calcular_puntuacion_general(self):
+        # Implementar la lógica para calcular la puntuación general
+        # En este ejemplo, simplemente suma todos los valores de las alergias
+        self.puntuacion_general = sum(alergia[1] for alergia in self.alergias_usuario if alergia[1] is not None)
 
-        if alergias_sin_nombre:
-            print("Alergias con nombre pero sin puntuación:")
-            for alergia in alergias_sin_nombre:
-                print(f"{alergia.nombre}: {alergia.valor}")
+        # Identificar valores sin nombre y nombres sin valor
+        for alergia in self.alergias_usuario:
+            nombre, valor = alergia
+            if not nombre:
+                self.valores_sin_nombre.append(valor)
+            elif valor is None:
+                self.nombres_sin_valor.append(nombre)  
 
-        if alergias_sin_puntuacion:
-            print("Resultados Desconocidos:")
-            for alergia in alergias_sin_puntuacion:
-                print(f"{alergia.nombre}: 0")
+    def ingresar_valores_personalizados(self):
+        print("Ingrese sus valores personalizados. Ingrese '0' para salir.")
+        while True:
+            entrada_usuario = input("Ingrese 'nombre', 'valor' o 'nombre valor': ")
+            if entrada_usuario == '0':
+                break
 
-        # Comparar la cadena de strings con la lista de alergias disponibles
-        for alergia_str in alergias_evaluadas:
-            alergia_encontrada = next((alergia for alergia in Alergia.alergias_registradas if alergia.nombre == alergia_str), None)
-            if alergia_encontrada:
-                print(f"{alergia_encontrada.nombre}: Alergico")
+            # Dividir la entrada del usuario en nombre y valor (si es aplicable)
+            entrada_dividida = entrada_usuario.split()
+            nombre = ""
+            valor = None
+
+            # Analizar la entrada del usuario
+            for elemento in entrada_dividida:
+                try:
+                    valor = int(elemento)
+                except ValueError:
+                    # Si no se puede convertir a entero, asumimos que es una cadena
+                    nombre += elemento + " "
+
+            # Eliminar el espacio adicional al final del nombre
+            nombre = nombre.strip()
+
+            # Crear una instancia de Alergia y agregarla a la lista de alergias del usuario
+            nueva_alergia = Alergia(nombre, valor)
+            self.alergias_usuario.append((nueva_alergia.nombre, nueva_alergia.valor))
+            print(f"Se agregó la alergia '{nueva_alergia.nombre}' con valor {nueva_alergia.valor}.")
+
+    def imprimir_resultados(self):
+        print("\nResultados de la evaluación general:")
+        print("===================================")
+
+        if self.alergias_usuario:
+            print("Alergias del usuario:")
+            for alergia in self.alergias_usuario:
+                print(f"{alergia[0]}: {alergia[1]}")
+
+            print(f"\nPuntuación General: {self.puntuacion_general}")
+
+            # Mostrar valores sin nombre
+            if self.valores_sin_nombre:
+                print("\nValores sin nombre:")
+                for valor in self.valores_sin_nombre:
+                    print(f"{valor}")
+
+            # Mostrar nombres sin valor
+            if self.nombres_sin_valor:
+                print("\nNombres sin valor:")
+                for nombre in self.nombres_sin_valor:
+                    print(f"{nombre}")
+
+            # Puedes agregar más detalles o cálculos según sea necesario
+        else:
+            print("No se ingresaron alergias.")

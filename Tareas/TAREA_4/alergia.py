@@ -1,5 +1,4 @@
 # alergia.py
-
 class Alergia:
     alergias_registradas = []
 

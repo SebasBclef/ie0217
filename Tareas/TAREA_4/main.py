@@ -13,9 +13,10 @@ while True:
     print("1. Ingresar su puntuación de alergia, para ver a cuales es alérgico.")
     print("2. Ingresar tipos de alergias, para ver cuál es su puntuación de alergia.")
     print("3. Mostrar resultados de la opción 1")
-    print("4. Salir")
+    print("4. Construir su propia lista")
+    print("5. Salir")
 
-    opcion = input("Seleccione una opción (1-4): ")
+    opcion = input("Seleccione una opción (1-5): ")
 
     if opcion == '1':
         try:
@@ -53,7 +54,13 @@ while True:
             print("No hay alergias registradas. Registre alergias antes de realizar la evaluación.")
 
     elif opcion == '4':
-        break
+        # Lógica para ingresar valores personalizados
+        evaluacion_general = EvaluacionGeneral([])
+        evaluacion_general.ingresar_valores_personalizados()
+        evaluacion_general.calcular_puntuacion_general()
+        evaluacion_general.imprimir_resultados()
 
+    elif opcion == '5':
+        break
     else:
-        print("Opción no válida. Por favor, seleccione una opción del 1 al 4.")
+        print("Opción no válida. Por favor, seleccione una opción del 1 al 5.")
