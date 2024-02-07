@@ -5,10 +5,19 @@ Se deben ejecutar los siguientes comandos:
 - **make run2:** para ejecutar el codigo que corresponde a la parte 2 de la tarea.
 - **make clean:** para borrar el directorio pycache, recomendado hacer siempre una vez que ya se empezo a probar el programa.
 
-**NOTA:** Es importante que, el ejecutar make, el codigo se va a correr 2 veces. Uno "normalmente", y otro para analizar el sistema mas a fondo gracias a **cprofile.** Sinceramente, ni idea como corregirlo. Era eso o no usar cprofile del todo, por lo que preferi seguir con esta implementacion.
+## Analisis de graficos, explicaciones sobre el codigo, entre otros
 
-Explicando un poco la como funciona el codigo, se imprime un menu. Si se elige la opcion 1, se ingresa un numero aleatorio y el sistema va a guardarlo para usarlo posteriormente. Si se escoge 2, se pueden ingresar tipos de alergia con sus valores para adicionarlos a la lista. Si se escoge la opcion 3, se va a decir a que alimentos u objetos es alergico el usuario, incluyendo los que se pueden agregar en la opcion 2. Si se escoge la opcion 4, se es capaz de construir una lista completamente personalizada. 
+Para analizar los datos, se escogio especificamente el archivo que corresponde a **Average Domestic Airline Itinerary Fares By Origin City for 2013
+Ranked by Total Number of Domestic Passengers in 2022**, en el cual hay informacion que corresponde a tarifas, ciudades y cantidad de pasajeros. En base a eso, se realizaron los analisis siguientes e imprimeron los graficos correspondientes. Ademas, explicando como funciona el codigo, es que primero realiza un **analisis estadistico general** basado en la funcion **describe** de Pandas, y se imprime en la terminal. En este analisis, se imprimen valores como la media, la desviacion estandar, los valores minimos y maximos, asi como los cuartiles de las columnas que corresponden a **Tarifa, Tarifa Ajustada a la inflacion de 2023, y los pasajeros registrados**, ya que estas son las unicas columnas con valores numericos a las cuales se les podia aplicar un analisis estadistico. 
 
+Luego, se procedio a implementar un filtro a traves de iteradores. 
+```
+
+```
+![Distribucion de Tarifas](https://github.com/SebasBclef/ie0217/blob/3015207fd5c13f5e21f815b3d2ad880df1b624b0/Tareas/TAREA_5/Distribucion%20de%20tarifas.png)
+![Grafico sobre Tarifas y Estado](https://github.com/SebasBclef/ie0217/blob/3015207fd5c13f5e21f815b3d2ad880df1b624b0/Tareas/TAREA_5/Tarifas%20y%20Estado.png)
+![Grafico sobre Tarifas y Pasajeros](https://github.com/SebasBclef/ie0217/blob/3015207fd5c13f5e21f815b3d2ad880df1b624b0/Tareas/TAREA_5/Tarifas%20y%20Pasajeros.png)
+![Grafico de Dispersion sobre Tarifas](https://github.com/SebasBclef/ie0217/blob/3015207fd5c13f5e21f815b3d2ad880df1b624b0/Tareas/TAREA_5/Tarifas.png)
 ## Iteradores
 ### 1. ¿Que es un iterador en Python y cual es su proposito?
 
