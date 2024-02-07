@@ -82,7 +82,7 @@ try:
     # Generar informes detallados por aeropuerto
     procesador = ProcesadorAeropuertos(df)
 
-    filtro_por_aeropuerto = lambda fila: fila['State Name'] == 'IL' #filtro puesto sobre los aeropuertos por estado
+    filtro_por_aeropuerto = lambda fila: fila['State Name'] == 'DE' #filtro puesto sobre los aeropuertos por estado
     procesador.agregar_condicion_filtrado(filtro_por_aeropuerto)
     print("-----------------EJEMPLO DE FILTROS-----------------------")
     for fila in procesador.filtrar_datos():
