@@ -53,6 +53,11 @@ try:
     value_to_remove = "Average Domestic Airline Itinerary Fares By Origin City for 2013 Ranked by Total Number of Domestic Passengers in 2022"
     df = df[df.apply(lambda row: str(value_to_remove) not in row.astype(str).values, axis=1)]
 
+    # Eliminar comas en las columnas numéricas
+    df['Average Fare ($)'] = df['Average Fare ($)'].str.replace(',', '')
+    df['Inflation Adjusted Average Fare ($) (Base Year: 2023)'] = df['Inflation Adjusted Average Fare ($) (Base Year: 2023)'].str.replace(',', '')
+    df['2022 Passengers (10% sample)'] = df['2022 Passengers (10% sample)'].str.replace(',', '')
+
     # Convertir las columnas numéricas a tipo numérico
     df['Average Fare ($)'] = pd.to_numeric(df['Average Fare ($)'], errors='coerce')
     df['Inflation Adjusted Average Fare ($) (Base Year: 2023)'] = pd.to_numeric(df['Inflation Adjusted Average Fare ($) (Base Year: 2023)'], errors='coerce')
@@ -63,8 +68,10 @@ try:
 
     # Agregar condiciones de filtrado si es necesario
     # Ejemplo: filtrar solo por aeropuertos en California
-    filtro_por_estado = lambda fila: fila['Nombre del Estado'] == 'California'
+    filtro_por_estado = lambda fila: fila['State Name'] == 'CA'  # Ajustado a la columna 'State Name'
     procesador.agregar_condicion_filtrado(filtro_por_estado)
+
+    pd.set_option('display.float_format', '{:.2f}'.format)
 
     # Iterar sobre los informes generados y filtrados
     for informe in procesador.generar_informes():
