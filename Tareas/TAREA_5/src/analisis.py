@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns  # Importar Seaborn
 
 class ProcesadorAeropuertos:
     def __init__(self, df):
@@ -44,6 +45,11 @@ class ProcesadorAeropuertos:
             cumple_condiciones = all(condicion(fila) for condicion in self.condiciones_filtrado)
             if cumple_condiciones:
                 yield fila
+    def generar_tarifas_ordenadas(self):
+        todas_tarifas = self.df['Average Fare ($)']
+        tarifas_ordenadas = sorted(todas_tarifas.dropna(), reverse=True)
+        yield from tarifas_ordenadas
+
 
 try:
     # Cargando el DataFrame
@@ -51,7 +57,7 @@ try:
     df.columns = df.iloc[1]
     df = df[2:]
 
-    # Eliminar columnas que estén completamente llenas de NaN
+    # Eliminando columnas que estén completamente llenas de NaN
     df.dropna(axis=1, how='all', inplace=True)
 
     # Para borrar el título
@@ -78,12 +84,65 @@ try:
 
     filtro_por_aeropuerto = lambda fila: fila['State Name'] == 'IL' #filtro puesto sobre los aeropuertos por estado
     procesador.agregar_condicion_filtrado(filtro_por_aeropuerto)
+    print("-----------------EJEMPLO DE FILTROS-----------------------")
     for fila in procesador.filtrar_datos():
         print(fila)
     # Iterar sobre los informes generados y filtrados
+    print("-----------------INFORME CON GENERADOR-----------------------")   
     for informe in procesador.generar_informes():
         print(informe)
+    procesador = ProcesadorAeropuertos(df)
+    print("-----------------ORGANIZANDO PRECIOS CON UN GENERADOR----------------------")   
+    print("Tarifas ordenadas de mayor a menor:")
+    tarifas_ordenadas = procesador.generar_tarifas_ordenadas()
+    tarifas_en_una_linea = ', '.join(map(str, tarifas_ordenadas))
+    print(tarifas_en_una_linea)
+#-------------------------graficos-------------------------------------------------------
+    #----------histograma-------------------
+    tarifas = df['Average Fare ($)'].dropna()
 
+    # Crear un histograma
+    plt.figure(figsize=(10, 6))
+    plt.hist(tarifas, bins=20, color='skyblue', edgecolor='black')
+    plt.title('Distribución de Tarifas')
+    plt.xlabel('Tarifa')
+    plt.ylabel('Frecuencia')
+    plt.show()
+
+#----------Grafico de dispersion-----------------------------------
+    # Seleccionar las columnas relevantes
+    datos_grafico = df[['2022 Passengers (10% sample)', 'Average Fare ($)']]
+
+    # Eliminar filas con valores nulos
+    datos_grafico = datos_grafico.dropna()
+
+    # Ordenar por el precio de manera descendente
+    datos_grafico = datos_grafico.sort_values(by='Average Fare ($)', ascending=False)
+
+    plt.figure(figsize=(12, 8))
+    plt.scatter(datos_grafico['2022 Passengers (10% sample)'], datos_grafico['Average Fare ($)'], color='coral', alpha=0.5)
+    plt.xlabel('Pasajeros')
+    plt.ylabel('Tarifa Promedio ($)')
+    plt.title('Relación entre Tarifas y Pasajeros')
+    plt.show()
+#----------Grafico de dispersion con Seaborn -----------------------------------
+
+    plt.figure(figsize=(12, 8))
+    sns.scatterplot(x=datos_grafico.index, y=datos_grafico['Average Fare ($)'], color='blue', s=50)
+    plt.title('Relación entre Índice y Tarifa Promedio')
+    plt.xlabel('Índice')
+    plt.ylabel('Tarifa Promedio ($)')
+    plt.show()
+
+#----------Grafico de barras con Seaborn -----------------------------------
+    plt.figure(figsize=(12, 8))
+    sns.barplot(x=df['State Name'], y=df['Average Fare ($)'], color='skyblue')
+    plt.title('Tarifas por Estado')
+    plt.xlabel('Estado')
+    plt.ylabel('Tarifa Promedio ($)')
+    plt.xticks(rotation=90, ha='right', rotation_mode='anchor', fontsize=8)
+    plt.tight_layout()
+    plt.show()
 
 except FileNotFoundError:
     print("Error, archivo no encontrado.")

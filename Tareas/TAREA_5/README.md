@@ -1,7 +1,8 @@
 # Tarea 5,IE-0207,Sebastián Bonilla Vega, C01263.
 ##  INSTRUCCIONES PARA EJECUTAR
 Se deben ejecutar los siguientes comandos:
-- **make:** para ejecutar el codigo.
+- **make run1:** para ejecutar el codigo que corresponde a la parte 1 de la tarea.
+- **make run2:** para ejecutar el codigo que corresponde a la parte 2 de la tarea.
 - **make clean:** para borrar el directorio pycache, recomendado hacer siempre una vez que ya se empezo a probar el programa.
 
 **NOTA:** Es importante que, el ejecutar make, el codigo se va a correr 2 veces. Uno "normalmente", y otro para analizar el sistema mas a fondo gracias a **cprofile.** Sinceramente, ni idea como corregirlo. Era eso o no usar cprofile del todo, por lo que preferi seguir con esta implementacion.
