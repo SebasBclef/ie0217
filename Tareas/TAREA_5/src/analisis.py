@@ -39,6 +39,11 @@ class ProcesadorAeropuertos:
             cumple_condiciones = all(condicion(fila) for condicion in self.condiciones_filtrado)
             if cumple_condiciones:
                 yield fila
+    def iterador_filtrado(self):
+        for _, fila in self.df.iterrows():
+            cumple_condiciones = all(condicion(fila) for condicion in self.condiciones_filtrado)
+            if cumple_condiciones:
+                yield fila
 
 try:
     # Cargando el DataFrame
@@ -63,19 +68,22 @@ try:
     df['Inflation Adjusted Average Fare ($) (Base Year: 2023)'] = pd.to_numeric(df['Inflation Adjusted Average Fare ($) (Base Year: 2023)'], errors='coerce')
     df['2022 Passengers (10% sample)'] = pd.to_numeric(df['2022 Passengers (10% sample)'], errors='coerce')
 
+    # Realizar un análisis estadístico
+    estadisticas = df.describe()
+    print("---------------------ANALISIS ESTADISTICO-----------------")
+    print(estadisticas)
+
     # Generar informes detallados por aeropuerto
     procesador = ProcesadorAeropuertos(df)
 
-    # Agregar condiciones de filtrado si es necesario
-    # Ejemplo: filtrar solo por aeropuertos en California
-    filtro_por_estado = lambda fila: fila['State Name'] == 'CA'  # Ajustado a la columna 'State Name'
-    procesador.agregar_condicion_filtrado(filtro_por_estado)
-
-    pd.set_option('display.float_format', '{:.2f}'.format)
-
+    filtro_por_aeropuerto = lambda fila: fila['State Name'] == 'IL' #filtro puesto sobre los aeropuertos por estado
+    procesador.agregar_condicion_filtrado(filtro_por_aeropuerto)
+    for fila in procesador.filtrar_datos():
+        print(fila)
     # Iterar sobre los informes generados y filtrados
     for informe in procesador.generar_informes():
         print(informe)
+
 
 except FileNotFoundError:
     print("Error, archivo no encontrado.")
