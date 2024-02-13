@@ -4,6 +4,21 @@ Se deben ejecutar los siguientes comandos:
 - **make run1:** para ejecutar el codigo que corresponde a la parte 1 de la tarea para ejecutar el codigo que corresponde a todo el codigo. Ademas, genera los datos en car_details_dataset.zip
 - **make clean:** para borrar el directorio pycache, ademas, tambien borra los datos de car_details_dataset.zip
 
+![Clustering Precio Distancia](https://github.com/SebasBclef/ie0217/blob/67c4deaaa1570371fad050a5caf56ccfef2d82f9/Tareas/TAREA_6/Clustering%20Precio%20Distancia.png)
+
+![Clustering Precio Edad](https://github.com/SebasBclef/ie0217/blob/67c4deaaa1570371fad050a5caf56ccfef2d82f9/Tareas/TAREA_6/Clustering%20Precio%20y%20Edad.png)
+
+![Regresion Precio Distancia](https://github.com/SebasBclef/ie0217/blob/67c4deaaa1570371fad050a5caf56ccfef2d82f9/Tareas/TAREA_6/Regresion%20Precio%20y%20Distancia.png)
+
+![Regresion Precio Tiempo](https://github.com/SebasBclef/ie0217/blob/67c4deaaa1570371fad050a5caf56ccfef2d82f9/Tareas/TAREA_6/Regresion%20Precio%20y%20Tiempo.png)
+
+![Elbow 1](https://github.com/SebasBclef/ie0217/blob/67c4deaaa1570371fad050a5caf56ccfef2d82f9/Tareas/TAREA_6/Elbow%201.png)
+
+
+![Elbow 2](https://github.com/SebasBclef/ie0217/blob/67c4deaaa1570371fad050a5caf56ccfef2d82f9/Tareas/TAREA_6/Elbow%202.png)
+
+
+
 ## Regresion
 ### 1. ¿Que es la regresion lineal y como se diferencia de la regresion no lineal?
 Cuando se habla de una **regresion lineal**, se hace referencia al metodo estadistico que se utiliza para modelar la relacion entre una variable dependiente y una o mas variables independientes, a traves de una funcion lineal. La forma mas simple de una regresion lineal esta dada a traves de la formula: **y = mx+b**, donde:
