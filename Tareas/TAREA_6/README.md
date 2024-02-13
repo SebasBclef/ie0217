@@ -3,20 +3,21 @@
 Se deben ejecutar los siguientes comandos:
 - **make run1:** para ejecutar el codigo que corresponde a la parte 1 de la tarea para ejecutar el codigo que corresponde a todo el codigo. Ademas, genera los datos en car_details_dataset.zip
 - **make clean:** para borrar el directorio pycache, ademas, tambien borra los datos de car_details_dataset.zip
-
+## Analisis de graficos
 ![Clustering Precio Distancia](https://github.com/SebasBclef/ie0217/blob/67c4deaaa1570371fad050a5caf56ccfef2d82f9/Tareas/TAREA_6/Clustering%20Precio%20Distancia.png)
-
+Del grafico anterior, se puede ver como los clusters se acumulan a un kilometraje bajo.Sin embargo, se puede ver una tendencia muy clara, que cuando hay menos kilometraje, antes de los 200mil km el precio puede tomar cualquier valor, inclusivemente los mas altos. Despues de los 200 mil km, se puede ver como de manera muy marcada disminuye el precio del carro al superar el kilometraje.
 ![Clustering Precio Edad](https://github.com/SebasBclef/ie0217/blob/67c4deaaa1570371fad050a5caf56ccfef2d82f9/Tareas/TAREA_6/Clustering%20Precio%20y%20Edad.png)
-
+De este grafico, se puede ver como el precio tiende a aumentar mientras mas cercano se este al 2024. Esto refleja la realidad, ya que un carro recien salido de agencia es muchas veces mas caro que un carro viejo, a no ser que el carro viejo sea de coleccion.
 ![Regresion Precio Distancia](https://github.com/SebasBclef/ie0217/blob/67c4deaaa1570371fad050a5caf56ccfef2d82f9/Tareas/TAREA_6/Regresion%20Precio%20y%20Distancia.png)
-
+Parecido al clustering precio/distancia, solo que en la regresion podemos ver como, a traves de la linea azul, se reafirma la tendencia de que, a mas kilometraje, se va a vener el carro por menos tiempo. Esto es debido a que la linea azul es decreciente.
 ![Regresion Precio Tiempo](https://github.com/SebasBclef/ie0217/blob/67c4deaaa1570371fad050a5caf56ccfef2d82f9/Tareas/TAREA_6/Regresion%20Precio%20y%20Tiempo.png)
+Por otro lado, parecido al clustering precio/edad, en la regresion se puede ver como con la linea azul se reafirma la tendencia de que mientras mas nuevo sea el carro, mas caro es. Esto es debido a que la linea azul es creciente.
 
 ![Elbow 1](https://github.com/SebasBclef/ie0217/blob/67c4deaaa1570371fad050a5caf56ccfef2d82f9/Tareas/TAREA_6/Elbow%201.png)
-
+Este grafico corresponde a la distorsion obtenida con el metodo elbow, el cual nos sugiere utilizar 5 clusters para el clustering de Precio Edad, ya que es cuando el tiempo de ejecucion se aproxima mas al puntaje de distorsion.
 
 ![Elbow 2](https://github.com/SebasBclef/ie0217/blob/67c4deaaa1570371fad050a5caf56ccfef2d82f9/Tareas/TAREA_6/Elbow%202.png)
-
+Este grafico corresponde a la distorsion obtenida con el metodo elbow, el cual nos sugiere utilizar 5 clusters para el clustering de Precio Tiempo, ya que es cuando el tiempo de ejecucion se aproxima mas al puntaje de distorsion.
 
 
 ## Regresion
