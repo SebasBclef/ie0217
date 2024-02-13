@@ -1,9 +1,8 @@
 # Tarea 5,IE-0207,Sebastián Bonilla Vega, C01263.
 ##  INSTRUCCIONES PARA EJECUTAR
 Se deben ejecutar los siguientes comandos:
-- **make run1:** para ejecutar el codigo que corresponde a la parte 1 de la tarea
-- **make run2:** para ejecutar el codigo que corresponde a la parte 2 de la tarea.
-- **make clean:** para borrar el directorio pycache, recomendado hacer siempre una vez que ya se empezo a probar el programa.
+- **make run1:** para ejecutar el codigo que corresponde a la parte 1 de la tarea para ejecutar el codigo que corresponde a todo el codigo. Ademas, genera los datos en car_details_dataset.zip
+- **make clean:** para borrar el directorio pycache, ademas, tambien borra los datos de car_details_dataset.zip
 
 ## Regresion
 ### 1. ¿Que es la regresion lineal y como se diferencia de la regresion no lineal?
